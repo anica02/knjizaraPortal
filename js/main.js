@@ -111,10 +111,11 @@ function provera(){
   //proveri ime i prezime
   let reImePrezime=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}$/;
   if(reImePrezime.test(vrednostImePrezime)){
+    document.querySelector("#poljeImePrezime > p").innerHTML="";
     nizPodaci.push(vrednostImePrezime);
   }
   else{
-    document.querySelector("#poljeImePrezime > p").innerHTML="Ime nije ispravno uneseno";
+    document.querySelector("#poljeImePrezime > p").innerHTML="Ime i prezime nije ispravno uneseno";
     document.querySelector("#poljeImePrezime > p").style.color="red";
     
   }
@@ -122,6 +123,7 @@ function provera(){
   //proveri adresu
   let reAdresa=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[\d]{1,5}$/;
   if(reAdresa.test(vrednostAdresa)){
+    document.querySelector("#poljeAdresa > p").innerHTML="";
     nizPodaci.push(vrednostAdresa);
   }
   else{
@@ -132,6 +134,7 @@ function provera(){
    //proveri telefon
    let reTelefon=/^06[0-689]\s[\d]{2}\s[\d]{2}\s[\d]{2,3}$/;
    if(reTelefon.test(vrednostTelefon)){
+    document.querySelector("#telefon > p").innerHTML="";
      nizPodaci.push(vrednostTelefon);
    }
    else{
@@ -146,6 +149,7 @@ function provera(){
     document.querySelector("#plati > p").style.color="red";
   }
   else{
+    document.querySelector("#plati > p").innerHTML="";
     nizPodaci.push(placanje.options[placanje.options.selectedIndex].text);
   }
   //provera radio 
@@ -161,6 +165,7 @@ function provera(){
     document.querySelector("#isporuci > p").style.color="red";
   }
   else{
+    document.querySelector("#isporuci > p").innerHTML="";
     nizPodaci.push(vrednostIsporuka);
   }
 
