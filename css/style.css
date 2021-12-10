@@ -3,7 +3,6 @@
 *{
     margin:auto;
     box-sizing:border-box;
-    
     font-family: 'PT Serif', serif;
 }
 .bordura{
@@ -20,7 +19,6 @@ header{
     overflow:hidden ;
     background-color:#fff;
     padding:7px 0px;
-  
 }
 .d-flex{
     display: flex;
@@ -35,7 +33,6 @@ nav ul li a{
     color:#252422;
     margin:0px 10px;
 }
-
 #slika{
     width:15%;
     height:100px;
@@ -84,7 +81,6 @@ margin-left:10px;
     padding:5px;
     margin-top: 5px;
     display: none;
-
 }
 #stanje2{
     width:50%;
@@ -94,7 +90,6 @@ margin-left:10px;
     border-style: inset;
     padding:5px;
     display: none;
-
 }
 .font{
     font-size:27px;
@@ -109,7 +104,6 @@ hr{
     margin:25px auto;
 }
 .hr-tekst{
-    
     position:relative;
     line-height: 1em;
     outline:0;
@@ -170,7 +164,6 @@ hr{
 .prviSlajd{
     display:block;
 } 
-  /* Next & previous buttons */
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -185,7 +178,6 @@ hr{
     border-radius: 0 3px 3px 0;
     user-select: none;
 }
-  
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
@@ -241,7 +233,7 @@ hr{
     display: block;
     margin: 0px auto;
     width: 10%;
-    height: 3px;
+    height: 2px;
     background-color:#252422;
     animation-name: proba;
     animation-duration: 5s;
@@ -254,24 +246,15 @@ hr{
 .artikl{
     width:20%;
     text-align: center;
-    padding: 10px 0px;
-    
+    padding: 10px 0px; 
 }
 .artikl img{
     width:70%;
-    
 }
 span h4{
-    
     font-weight: bold;
     margin:5px 0px;
     border-bottom: 2px solid #EB5E28;
-}
-span{
-    font-weight: bold;
-    color:#252422;
-    border-bottom: 2px solid #EB5E28;
-
 }
 p span{
     border-bottom: 2px solid #EB5E28;
@@ -287,7 +270,7 @@ p span{
     margin-top: 10px;
 }
 .blok1{
-   width:45%;
+   width:47%;
    position: relative;
    border:5px solid;
    border-style: outset;
@@ -295,20 +278,17 @@ p span{
    padding: 40px 30px;
    text-justify:inter-word;
    box-shadow: -40px -20px #EB5E28;
-
-   
+   margin-right: 6%; 
 }
 .blok1 p{
     margin-bottom: 15px;
+    font-size: 18px;
 }
 .blok1 h3{
     margin-bottom: 10px;
-    
+    font-size: 21px;
 }
-
-
 #blokSaSlikom{
-
    width:45%;
    text-align: center;
    position: relative;
@@ -336,9 +316,7 @@ p span{
     border-style: outset;
     margin-bottom: 40px;
     padding:30px 0px;
-    
 }
-
 #porudzbina{
     padding: 2% 8%;
     border-top:10px solid ;
@@ -370,11 +348,13 @@ p span{
     border-radius: 5px;
     border-style: inset;
     color:#fff;
-
 }
 #porudzbina input[type=radio]{
     margin-bottom: 10px;
     margin-left:5px ;
+}
+#porudzbina label{
+    margin-bottom: 10px;
 }
 form{
     margin-top: 30px;
@@ -427,8 +407,6 @@ footer{
     padding:30px 0px;
     color:#fff;
     border-radius: 2px;
-
-
 }
 #meniDonji{
     text-align: left;
@@ -444,12 +422,17 @@ footer{
     border-bottom: 1px solid #fff;
 }
 .deo{
-   
     text-align: center;
 }
 .deo p i {
     font-size: 18px;
-    
+}
+.deo a p{
+    color:#fff;
+    border-bottom: 2px solid #fff ;
+}
+.deo a{
+    text-decoration: none;
 }
 .deo a i{
     font-size:23px;
@@ -462,9 +445,6 @@ footer{
 }
 .font p{
     font-size:10px;
-}
-.zelena{
-    color:green;
 }
 .odalji{
     margin-top:15px;
@@ -480,7 +460,9 @@ footer{
     100% {
       width: 50px;
     }
-  }
+}
+
+
 @media screen and (max-width:1026px){
     #baner{
         background-size: contain;
@@ -541,7 +523,6 @@ footer{
     .blok1{
         width:100%;
     }
-
     #blokSaSlikom{
         width: 100%;
         margin-top: 15%;
@@ -550,7 +531,6 @@ footer{
     #blokSaSlikom img{
         width:65%;
         margin-left: 12%;
-        
     }
     #porudzbina, #poruka{
         width:45%;
@@ -576,13 +556,18 @@ footer{
         margin-left: 3%;
         box-shadow: -30px -20px #EB5E28;
     }
+    .blok1 p{
+        font-size: 16px;
+    }
+    .blok1 h3{
+        font-size: 19px;
+    }
 }
 @media screen and (max-width: 500px) { 
     
     #baner{
         width:100%;
         text-align: center;
-
     }
     .d-flex{
         display:block;
@@ -610,8 +595,6 @@ footer{
     i.hid{
         display: none;
     }
-    
-
 }
 
 @media screen and (max-width:426px){
@@ -624,19 +607,16 @@ footer{
         right:0px;
         top:15px;
     }
-
     .navigacija.responsive a{
         display: block;
         text-align:left;
         margin-bottom: 10px;
-        
     }
     .navigacija.responsive li i {
         float:left;
         margin-left:5px;
         display:block;
     }
-   
     header{
         padding:10px 5px;
     }
@@ -686,7 +666,6 @@ footer{
     .knjiga{
            width:70%;
      }
-      
     .artikl{
         width:70%;
     }
@@ -718,11 +697,15 @@ footer{
     .deo{
         margin-bottom: 30px;
     }
-    
+    .blok1 p{
+        font-size: 15px;
+    }
+    .blok1 h3{
+        font-size: 18px;
+    }
 }
 @media screen and (max-width:325px){
 
-    
     #pretragaKnjiga input[type="search"]{
         width:89%;
         margin-top:10px;
@@ -730,7 +713,6 @@ footer{
     #novosti{
         width:100%;
     }
-    
     header{
         padding:10px 5px;
     }
@@ -768,9 +750,9 @@ footer{
    }
    .artikl h3{
     font-size: 18px;
-}
+    }
   .artikl h4{
- font-size: 16px;
-}
+    font-size: 16px; 
+   }
     
 }

@@ -1,8 +1,9 @@
 
 //NAV HAMBURGER
+var x = document.getElementById("meni");
 function sakri() {
-    var x = document.getElementById("meni");
-    if (x.className === "navigacija") {
+  var x = document.getElementById("meni");
+    if (x.className == "navigacija") {
       x.className += " responsive";
     } else {
       x.className = "navigacija";
@@ -12,6 +13,8 @@ function sakri() {
 //SLAJDER
 var timer;
 var slajdIndeks = 1;
+clearTimeout(timer);
+timer = setTimeout(() => plusSlides(1), 4000);
 function plusSlides(n) {
   showSlides(slajdIndeks += n);
 }
@@ -26,11 +29,10 @@ function showSlides(n) {
       slajd[i].style.display = "none";
   }
   slajd[slajdIndeks-1].style.display = "block";
-  
-  clearTimeout(timer);
   timer = setTimeout(() => plusSlides(1), 4000);
- 
 }
+
+
 
 
 //PRETRAGA
@@ -59,7 +61,7 @@ function dohvatiSadrzaj(){
   }
   
 }
-function nesto(){
+function nestani(){
   document.querySelector("#pretragaKnjiga > p").classList.add("sakriP");
   document.querySelector("#linkKnjige > a").classList.add("sakriP");
 }
@@ -68,7 +70,7 @@ function nesto(){
 
 $(document).ready(function(){
   
-  $('#korpa').click(function(){
+  $('#korpa1').click(function(){
     
       if($('#stanje').is(':visible')) {
         $('#stanje').hide();
@@ -89,7 +91,7 @@ $(document).ready(function(){
     });
 });
 
-var korpa=document.querySelector("#korpa");
+var korpa=document.querySelector("#korpa1");
 
 
 //OBRADA FORME
@@ -115,7 +117,7 @@ function provera(){
     nizPodaci.push(vrednostImePrezime);
   }
   else{
-    document.querySelector("#poljeImePrezime > p").innerHTML="Ime i prezime nije ispravno uneseno";
+    document.querySelector("#poljeImePrezime > p").innerHTML="Ime i prezime nije ispravno uneto";
     document.querySelector("#poljeImePrezime > p").style.color="red";
     
   }
@@ -145,7 +147,7 @@ function provera(){
 
    //provera padajuce
   if(placanje.options[placanje.options.selectedIndex].value=="0"){
-    document.querySelector("#plati > p").innerHTML="Morate izabrati nacin placanja";
+    document.querySelector("#plati > p").innerHTML="Morate izabrati način plaćanja";
     document.querySelector("#plati > p").style.color="red";
   }
   else{
@@ -161,7 +163,7 @@ function provera(){
     }
   }
   if(vrednostIsporuka==" "){
-    document.querySelector("#isporuci > p").innerHTML="Morate izabrati nacin isporuke";
+    document.querySelector("#isporuci > p").innerHTML="Morate izabrati način isporuke";
     document.querySelector("#isporuci > p").style.color="red";
   }
   else{
@@ -197,11 +199,11 @@ function provera2(){
   //proveri ime i prezime
   let reImePrezime2=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}$/;
   if(reImePrezime2.test(vrednostImePrezime2)){
-    document.querySelector("#poljeImePrezime2 > p").innerHTML="Ime je ispravno uneseno";
+    document.querySelector("#poljeImePrezime2 > p").innerHTML="Ime je ispravno uneto";
     document.querySelector("#poljeImePrezime2 > p").style.color="green";
   }
   else{
-    document.querySelector("#poljeImePrezime2 > p").innerHTML="Ime nije ispravno uneseno";
+    document.querySelector("#poljeImePrezime2 > p").innerHTML="Ime nije ispravno uneto";
     document.querySelector("#poljeImePrezime2 > p").style.color="red";
     
   }
@@ -230,12 +232,22 @@ function provera2(){
 
 }
 //DODAVANJE U KORPU
+let korpaDugme=document.getElementsByClassName("dugme");
+console.log(korpaDugme);
+var brojKnjiga=0;
 
-let dodajKorpa=document.querySelectorAll("radi");
+function broji(){
+  brojKnjiga++;
+  let dodajUKorpu=document.querySelector("#stanje >p");
+  dodajUKorpu.innerHTML="Broj knjiga:"+brojKnjiga;
+  let dodajUKorpu2=document.querySelector("#stanje2 >p");
+  dodajUKorpu2.innerHTML="Broj knjiga:"+brojKnjiga;
+  let porudzbinaKorpa=document.querySelector(".forma > p");
+  porudzbinaKorpa.innerHTML="Broj porucenih knjiga: "+brojKnjiga;
+};
 
-for(let i=0;i<dodajKorpa.length;i++){
-  console.log("ja");
-}
+
+
 
 
 

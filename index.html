@@ -5,12 +5,13 @@
         <link rel="shortcut icon" href="img/icon1.png"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta charset="UTF-8"/>
-        <meta name="keywords" content="knjižara, knjige, strani, domaci, pisci"/>
+        <meta name="keywords" content="knjižara, knjige, strani, domaći, pisci"/>
         <meta name="description" content="Knjižara Portal, stranica gde možete kupiti vaše omiljene knjige domaćih a i stranih pisaca "/>
         <link type="text/css" rel="stylesheet" href="css/style.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" 
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     </head>
     <body>
         <div id="novosti" class="sirina">
@@ -21,14 +22,14 @@
                 <a href="index.html"><img src="img/Logo1.png" alt="dečak-čita-knjigu"/></a>
             </div>
             <div id="pretragaKnjiga">
-                <input type="search" placeholder="Unesite željenu knjigu..." id="trazenaKnjiga" onFocus="nesto()"/>
+                <input type="search" placeholder="Unesite željenu knjigu..." id="trazenaKnjiga" onFocus="nestani()"/>
                 <i class="fas fa-search" id="pretraga" onClick="dohvatiSadrzaj()"></i><br/>
                 <p clas="sakriP"></p><div id="linkKnjige"></div>
             </div>
             <div id="dodatneStavke">
-                <i class="fas fa-cart-arrow-down font hid" id="korpa"></i>
+                <i class="fas fa-cart-arrow-down font hid" id="korpa1"></i>
                 <a href="#kontakt"><i class="fas fa-envelope-open-text font hid"></i></a>
-                <div id="stanje"><p>Broj knjiga: 0</p></div>
+                <div id="stanje"><p>Broj knjiga:0</p></div>
             </div>
         </header>
         <nav class="navigacija sirina" id="meni">
@@ -38,13 +39,13 @@
                 <li><a href="#domaci">Domaći</a></li>
                 <li><a href="#autor">Autor</a></li>
                 <li><a href="#kontakt">Kontakt</a></li>
-                <li><i class="fas fa-cart-arrow-down font vid" id="korpa2"></i><a href="#kontakt"><i class="fas fa-envelope-open-text font vid"></i></a></li>
+                <li><i class="fas fa-cart-arrow-down font vid" id="korpa2">
+                </i><a href="#kontakt"><i class="fas fa-envelope-open-text font vid"></i></a></li>
                 <li><a href="javascript:void(0);" class="icon" onclick="sakri()"><i class="fa fa-bars"></i></a></li>
-                <div id="stanje2"><p>Broj knjiga:<span>0</span></p></div>
+                <div id="stanje2"><p>Broj knjiga:</p></div>
             </ul>
         </nav>
         <hr class="hr-tekst" data-content="Ekranizovane &nbsp;Knjige">
-        
         <div class="slajder">
             <div class="slajdovi prviSlajd">
                 <div id="knjige" class="d-flex sirina">
@@ -66,7 +67,6 @@
                 <div id="knjige" class="d-flex sirina">
                     <div class="knjiga">
                         <a name="chamber of secrets"><img src="img/harry4.png" alt="korica-od-knjige-sa-metaforom"></a>
-                        
                     </div>
                     <div class="knjiga">
                         <a name="goblet of fire"><img src="img/harry3.png" alt="korica-od-knjige-sa-peharom"/></a>
@@ -77,7 +77,6 @@
                     <div class="knjiga">
                         <a name="half-blood prince"><img src="img/harry2.png" alt="korica-od-knjige-sa-metaforom2"/></a>
                     </div>
-                    
                 </div>
             </div>
             <div class="slajdovi">
@@ -94,7 +93,6 @@
                     <div class="knjiga">
                         <a name="breaking dawn"><img src="img/tw4.png" alt="korica-od-knjige-sa-šahovskim-figurama"/></a>
                     </div>
-                    
                 </div>
             </div>
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -116,7 +114,7 @@
                     <h3>The fellowsip of the ring</h3>
                     <h4>J.R.R. TOLKIEN </h4>
                     <span><h4>1.282 din</h4></span>
-                    <a href="#" class="radi"><input type="button" value="DODAJ U KORPU"  id="dugme1" class="dugme"/></a>
+                    <button class="dugme" onClick="broji()">DODAJ U KORPU</button>
                 </div>
                 <div class="artikl">
                     <a name="it"><img  src="img/it.png" alt="korica-od-knjige-sa-dečakom-u-žutoj-kabanici" /></a>
@@ -124,7 +122,7 @@
                     <h3>IT</h3>
                     <h4>STEPHEN KING</h4>
                     <span><h4>1.300 din</h4></span>
-                    <a href="#" class="radi"><input type="button" value="DODAJ U KORPU" id="dugme2" class="dugme"/><a>
+                    <button class="dugme" onClick="broji()">DODAJ U KORPU</button>
                 </div>
                 <div class="artikl">
                     <a name="ready player two"><img  src="img/player.jpg" /></a>
@@ -132,7 +130,7 @@
                     <h3>Ready player two</h3>
                     <h4>ERNEST CLINE</h4>
                     <span><h4>1.100 din</h4></span>
-                    <input type="button" value="DODAJ U KORPU" id="dugme3" class="dugme"/>
+                    <button class="dugme" onClick="broji()">DODAJ U KORPU</button>
                 </div>
                 <div class="artikl">
                     <a name="the mistery knight"><img src="img/MysteryKnight.jpg" alt="korica-od-knjige-sa-viteškim-štitom" /></a>
@@ -140,44 +138,44 @@
                     <h3>The mistery knight</h3>
                     <h4>GEORGE R.R MARTIN</h4>
                     <span><h4>2.500 din</h4></span>
-                    <input type="button" value="DODAJ U KORPU" id="dugme4" class="dugme"/>
+                    <button class="dugme" onClick="broji()">DODAJ U KORPU</button>
                 </div>
             </div>
         </div>
         <div class="izdavaci sirina">
-            <h1 class="linija"><a name="domaci">Domaci Pisci</a></h1>
+            <h1 class="linija"><a name="domaci">Domaći Pisci</a></h1>
             <div class="region d-flex" id="drugi">
                 <div class="artikl">
-                    <a name="zamalek"><img src="img/zamalek.png"/></a>
+                    <a name="zamalek"><img src="img/zamalek.png" alt="korica-od knjige-sa-balegarom"/></a>
                     <br/>
                     <h3>Zamalek</h3>
                     <h4>DEJAN STANKOVIĆ</h4>
                     <span><h4>900 din</h4></span>
-                    <input type="button" value="DODAJ U KORPU" id="dugme5" class="dugme"/>
+                    <button class="dugme" onClick="broji()">DODAJ U KORPU</button>
                 </div>
                 <div class="artikl">
-                    <a name="znakovi"><img src="img/andric.png"/></a>
+                    <a name="znakovi"><img src="img/andric.png" alt="korica-od knjige-sa-zlatnim-slovima"/></a>
                     <br/>
                     <h3>Znakovi pored puta</h3>
                     <h4>IVO ANDRIĆ</h4>
                     <span><h4>1.300 din</h4></span>
-                    <input type="button" value="DODAJ U KORPU" id="dugme6" class="dugme"/>
+                    <button class="dugme" onClick="broji()">DODAJ U KORPU</button>
                 </div>
                 <div class="artikl">
-                    <a name="konstantnovo"><img src="img/konstantinovo.png"/></a>
+                    <a name="konstantnovo"><img src="img/konstantinovo.png" alt="korica-od knjige-sa-mačem"/></a>
                     <br/>
                     <h3>Konstantinovo raskršće</h3>
                     <h4>DEJAN STOJILJKOVIĆ</h4>
                     <span><h4>800 din</h4></span>
-                    <input type="button" value="DODAJ U KORPU" id="dugme7" class="dugme"/>
+                    <button class="dugme" onClick="broji()">DODAJ U KORPU</button>
                 </div>
                 <div class="artikl">
-                    <a name="austrijanka"><img src="img/austrijanka.png"/></a>
+                    <a name="austrijanka"><img src="img/austrijanka.png" alt="korica-od knjige-sa-devojkom"/></a>
                     <br/>
                     <h3>Austrijanka</h3>
                     <h4>ZORAN MILEKIĆ</h4>
                     <span><h4>900 din</h4></span>
-                    <input type="button" value="DODAJ U KORPU"  id="dugme8" class="dugme"/>
+                    <button class="dugme" onClick="broji()">DODAJ U KORPU</button>
                 </div>
             </div>
         </div>
@@ -202,21 +200,24 @@
             <div class="region d-flex">
                 <div id="porudzbina">
                     <h3>Vaša porudžbina</h3>
-                    <form method="GET" action="#" name="formula1">
+                    <form method="GET" action="#" name="forma1">
                         <div id="poljeImePrezime">
-                            <label for="">Ime i prezime:</label><input type="text" name="imePrezime" id="imePrezime" placeholder="Petar Petrović"/>
+                            <label for="imePrezime">Ime i prezime:</label>
+                            <input type="text" name="imePrezime" id="imePrezime" placeholder="Petar Petrović"/>
                             <p></p>
                         </div>
                         <div id="poljeAdresa">
-                            <label for="">Adresa:</label><input type="text" name="adresa" id="adresa"  placeholder="Ljubiće Luković 12"/>
-                        <p></p>
+                            <label for="adresa">Adresa:</label>
+                            <input type="text" name="adresa" id="adresa"  placeholder="Ljubiće Luković 12"/>
+                            <p></p>
                         </div>
                         <div id="telefon">
-                            <label>Broj telefona:</label><input type="text" name="brojTelefona" id="brojTelefona"  placeholder="06x xx xx xxx"/><br/>
-                        <p></p>
+                            <label for="brojTelefona">Broj telefona:</label>
+                            <input type="text" name="brojTelefona" id="brojTelefona"  placeholder="06x xx xx xxx"/><br/>
+                            <p></p>
                         </div>
                         <div id="plati">
-                            <lable for="">
+                            <lable for="placanje">
                                 <select id="placanje">
                                     <option value="0">Način plaćanja</option>
                                     <option value="gotovina">Pri uzeću</option>
@@ -226,17 +227,17 @@
                             <p></p>
                         </div>
                         <div id="isporuci">
-                            <label>Isporuka:</label><br/>
+                            <label for="isporuka">Isporuka:</label><br/>
                             <input type="radio" name="isporuka" id="kucna" value="Adresa">Kućna adresa &nbsp;
                             <input type="radio" name="isporuka" id="posta" value="Pošta">Pošta
                             <p></p>
                         </div>
-                        <p>Broj naručenih knjiga: 0</p>
+                        
                         <div class="forma">
                             <input type="button" id="poruci" value="PORUČI" onClick="provera()"/>
+                            <p></p>
                         </div>
                         <div id="ispis">
-                            
                         </div>
                     </form>
                 </div>
@@ -244,20 +245,22 @@
                     <h3>Pošaljite nam poruku</h3>
                     <form method="GET" action="#" name="formula1">
                         <div id="poljeImePrezime2">
-                            <label for="">Ime i prezime:</label><input type="text" name="imePrezime2" id="imePrezime2" placeholder="Petar Petrović"/>
+                            <label for="imePrezime2">Ime i prezime:</label>
+                            <input type="text" name="imePrezime2" id="imePrezime2" placeholder="Petar Petrović"/>
                             <p></p>
                         </div>
                         <div id="poljeEmail">
-                            <label>Email:</label><input type="text" name="mejl" id="mejl"  placeholder="petar.petrovic@gmail.com"/>
-                        <p></p>
+                            <label for="mejl">Email:</label>
+                            <input type="text" name="mejl" id="mejl"  placeholder="petar.petrovic@gmail.com"/>
+                            <p></p>
                         </div>
                         <div id="poljePoruka">
-                            <label>Vaša poruka:</label><textarea id="vasaPoruka"></textarea>
-                        <p></p>
+                            <label for="vasaPoruka">Vaša poruka:</label>
+                            <textarea id="vasaPoruka"></textarea>
+                            <p></p>
                         </div>
                         <input type="button" id="posalji" value="POŠALJI" onClick="provera2()"/>
                     </form>
-                   
                 </div>
             </div>
         </div>
@@ -281,16 +284,15 @@
            </div>
            <div class="deo">
                <h3>PRATITE NAS NA</h3>
-               <a href="https://www.instagram.com/_sweetheart55_/" target="_blank"><i class="fab fa-instagram"></i></a>
-               <a href="https://twitter.com/anika99black" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://www.instagram.com/_sweetheart55_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/anika99black" target="_blank"><i class="fab fa-twitter-square"></i></a>
                 <a href="https://www.linkedin.com/in/anica-radenkovi%C4%87-9519b3206/" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="https://www.facebook.com/anica.radenkovic96/" target="_blank"><i class="fab fa-facebook-square"></i></a>
                 <a href="https://github.com/anica02" target="_blank"><i class="fab fa-github-square"></i></a>
            </div>
            <div class="deo"> 
                <h3>DODATNO</h3>
-               <p>Sitemap</p>
-               <p>Dokumentacija</p>
+               <a href="Dokument/Dokumentacija.docx" target="_blank"><p>Dokumentacija</p></a>
            </div>
         </footer>
     </body>
