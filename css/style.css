@@ -427,11 +427,8 @@ footer{
 .deo p i {
     font-size: 18px;
 }
-.deo a p{
-    color:#fff;
-    border-bottom: 2px solid #fff ;
-}
 .deo a{
+    color:#fff;
     text-decoration: none;
 }
 .deo a i{
