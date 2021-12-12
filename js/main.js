@@ -37,8 +37,8 @@ function showSlides(n) {
 
 //PRETRAGA
 function dohvatiSadrzaj(){
-  var nizK=["a game of thrones","a clash of kings","a strom of swords","chamber of secrets","goblet of fire","order of the pheonix","half-blood prince","twilight","new moon","eclipse","breaking dawn","the fellowsip of the ring","it","ready player two","the mistery knight", "zamalek", "znakovi pored puta","konstantinovo raskrsce", "austrijanka"];
-  var nizA=["#got","#clash of kings","#strom of swords","#chamber of secrets","#goblet of fire","#order of the pheonix","#half-blood prince","#twilight","#new moon","#eclipse","","#the fellowsip of the ring","#it","#ready player two","#the mistery knight","#zamalek", "#znakovi", "#konstantinovo", "#austrijanka"];
+  var nizK=["the fellowsip of the ring","it","ready player two","the mistery knight", "zamalek", "znakovi pored puta","konstantinovo raskrsce", "austrijanka"];
+  var nizA=["#the fellowsip of the ring","#it","#ready player two","#the mistery knight","#zamalek", "#znakovi", "#konstantinovo", "#austrijanka"];
   var sadrzaj=document.querySelector("#trazenaKnjiga").value.toLowerCase();
   var sadrzi=nizK.includes(sadrzaj,0);
   if(sadrzi){
