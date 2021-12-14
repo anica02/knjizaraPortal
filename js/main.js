@@ -42,7 +42,7 @@ function dohvatiSadrzaj(){
   var sadrzaj=document.querySelector("#trazenaKnjiga").value.toLowerCase();
   var sadrzi=nizK.includes(sadrzaj,0);
   if(sadrzi){
-    document.querySelector("#pretragaKnjiga > p").innerHTML="Knjiga je nadjena, link ka knjizi:";
+    document.querySelector("#pretragaKnjiga > p").innerHTML="Knjiga je nađena, link ka knjizi:";
     document.querySelector("#pretragaKnjiga > p").classList.remove("sakriP");
     document.querySelector("#pretragaKnjiga > p").style.color="green";
     for(let i=0;i<nizK.length;i++){
@@ -55,7 +55,7 @@ function dohvatiSadrzaj(){
       }
     }
   else if(!sadrzi){
-      document.querySelector("#pretragaKnjiga > p").innerHTML="Knjiga nije nadjena, unesite ponovo ";
+        document.querySelector("#pretragaKnjiga > p").innerHTML="Knjiga nije nađena, unesite ponovo ";
       document.querySelector("#pretragaKnjiga > p").classList.remove("sakriP");
       document.querySelector("#pretragaKnjiga > p").style.color="red";
   }
@@ -140,7 +140,7 @@ function provera(){
      nizPodaci.push(vrednostTelefon);
    }
    else{
-     document.querySelector("#telefon > p").innerHTML="Telefon nije ispravno unesen";
+     document.querySelector("#telefon > p").innerHTML="Telefon nije unet u ispravnom formatu";
      document.querySelector("#telefon > p").style.color="red";
      
    }
@@ -173,8 +173,9 @@ function provera(){
 
 
   //ispisivanje podataka
+  
   if(nizPodaci.length>0){
-    var ispis="<p>Vasi podaci<p>";
+    var ispis="<p>Vaši podaci<p>";
     ispis+="<ul>";
   
     for(let podatak of nizPodaci){
@@ -199,11 +200,13 @@ function provera2(){
   //proveri ime i prezime
   let reImePrezime2=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}$/;
   if(reImePrezime2.test(vrednostImePrezime2)){
-    document.querySelector("#poljeImePrezime2 > p").innerHTML="Ime je ispravno uneto";
+    document.querySelector("#poljeImePrezime2 > p").innerHTML="Ime i prezime je prosleđeno";
     document.querySelector("#poljeImePrezime2 > p").style.color="green";
+
+
   }
   else{
-    document.querySelector("#poljeImePrezime2 > p").innerHTML="Ime nije ispravno uneto";
+    document.querySelector("#poljeImePrezime2 > p").innerHTML="Ime i prezime nije ispravno uneti";
     document.querySelector("#poljeImePrezime2 > p").style.color="red";
     
   }
@@ -211,11 +214,11 @@ function provera2(){
 
   let reEmail=/^\w([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
   if(reEmail.test(vrednotEmail)){
-    document.querySelector("#poljeEmail > p").innerHTML="Email je ispravno unesen";
+    document.querySelector("#poljeEmail > p").innerHTML="Email je prosleđen";
     document.querySelector("#poljeEmail > p").style.color="green";
   }
   else{
-    document.querySelector("#poljeEmail > p").innerHTML="Email nije ispravno unesen";
+    document.querySelector("#poljeEmail > p").innerHTML="Email nije unet u ispravnom formatu";
     document.querySelector("#poljeEmail > p").style.color="red";
     
   }
@@ -226,9 +229,10 @@ function provera2(){
     document.querySelector("#poljePoruka > p").style.color="red";
   }
   else{
-    document.querySelector("#poljePoruka> p").innerHTML="Poruka je prosleđena";
+    document.querySelector("#poljePoruka > p").innerHTML="Poruka je prosleđena";
     document.querySelector("#poljePoruka > p").style.color="green";
   }
+
 
 }
 //DODAVANJE U KORPU
@@ -243,12 +247,16 @@ function broji(){
   let dodajUKorpu2=document.querySelector("#stanje2 >p");
   dodajUKorpu2.innerHTML="Broj knjiga:"+brojKnjiga;
   let porudzbinaKorpa=document.querySelector(".forma > p");
-  porudzbinaKorpa.innerHTML="Broj porucenih knjiga: "+brojKnjiga;
+  porudzbinaKorpa.innerHTML="Broj poručenih knjiga: "+brojKnjiga;
 };
 
-
-
-
+$(document).ready(function(){
+  
+  $('.dugme').click(function(){
+    
+      $(this).text("DODATO");
+  });
+});
 
 
 
