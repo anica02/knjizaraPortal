@@ -202,11 +202,9 @@ function provera2(){
   if(reImePrezime2.test(vrednostImePrezime2)){
     document.querySelector("#poljeImePrezime2 > p").innerHTML="Ime i prezime je prosleđeno";
     document.querySelector("#poljeImePrezime2 > p").style.color="green";
-
-
   }
   else{
-    document.querySelector("#poljeImePrezime2 > p").innerHTML="Ime i prezime nije ispravno uneti";
+    document.querySelector("#poljeImePrezime2 > p").innerHTML="Ime i prezime nije ispravno uneto";
     document.querySelector("#poljeImePrezime2 > p").style.color="red";
     
   }
@@ -229,11 +227,8 @@ function provera2(){
     document.querySelector("#poljePoruka > p").style.color="red";
   }
   else{
-    document.querySelector("#poljePoruka > p").innerHTML="Poruka je prosleđena";
-    document.querySelector("#poljePoruka > p").style.color="green";
+    document.querySelector("#poljePoruka > p").innerHTML=" ";
   }
-
-
 }
 //DODAVANJE U KORPU
 let korpaDugme=document.getElementsByClassName("dugme");
