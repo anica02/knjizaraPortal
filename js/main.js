@@ -1,3 +1,13 @@
+//Novosti
+
+let noviPTag=document.createElement("p");
+let sadrzajPTaga=document.createTextNode("Srećne praznike vam želi knjižara Portal");
+noviPTag.appendChild(sadrzajPTaga);
+let deo_strane=document.getElementById("novosti");
+deo_strane.appendChild(noviPTag);
+
+
+
 
 //NAV HAMBURGER
 var x = document.getElementById("meni");
