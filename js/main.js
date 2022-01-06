@@ -72,7 +72,7 @@ $(document).ready(function(){
 
 
 
-let ulTag = document.querySelector("#autoWidth");
+/*let ulTag = document.querySelector("#autoWidth");
 let nizAlt = ["korica-od-knjige-sa-glavom-zmaja","korica-od-knjige-sa-krunom","korica-od-knjige-sa-viteškim-šlemom","korica-od-knjige-sa-štitom","korica-od-knjige-sa-metaforom",
               "korica-od-knjige-sa-peharom","korica-od-knjige-sa-feniksom","korica-od-knjige-sa-metaforom2", "korica-od-knjige-sa-crvenom-jabukom","korica-od-knjige-sa-cvetom",
               "korica-od-knjige-sa-pokidanom-mašnom","korica-od-knjige-sa-šahovskim-figurama"];
@@ -93,7 +93,7 @@ for(let l=0; l<nizAlt.length; l++){
   liTag.appendChild(divSaKnjigom);
 
   ulTag.appendChild(liTag);
-}
+}*/
 
 $(document).ready(function(){
   $('#autoWidth').lightSlider({
