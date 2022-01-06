@@ -8,14 +8,19 @@
         <meta name="keywords" content="portal, knjižara, knjige, strani, domaći, pisci, autor, kontakt"/>
         <meta name="description" content="Knjižara Portal, stranica gde možete kupiti vaše omiljene knjige domaćih a i stranih pisaca "/>
         <link type="text/css" rel="stylesheet" href="css/style.css"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/main.js" defer></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" 
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+        <link type="text/css" rel="stylesheet" href="css/lightslider.css" />     
+        <script src="js/lightslider.js"></script>
+      
     </head>
     <body>
+        <a name="naslovna"></a>
         <div id="novosti" class="sirina">
-           <!--<p>Srećne praznike vam želi knjižara Portal</p>-->
+           <p>Srećne praznike vam želi knjižara Portal</p>
         </div>
         <header class="d-flex sirina">
             <div id="slika">
@@ -24,80 +29,22 @@
             <div id="pretragaKnjiga">
                 <input type="search" placeholder="Unesite željenu knjigu..." id="trazenaKnjiga" onFocus="nestani()"/>
                 <i class="fas fa-search" id="pretraga" onClick="dohvatiSadrzaj()"></i><br/>
-                <p clas="sakriP"></p><div id="linkKnjige"></div>
+                <p clas="sakriP"></p><p id="linkKnjige"></p>
             </div>
             <div id="dodatneStavke">
                 <i class="fas fa-cart-arrow-down font hid" id="korpa1"></i>
-                <a href="#kontakt"><i class="fas fa-envelope-open-text font hid"></i></a>
                 <div id="stanje"><p>Broj knjiga:0</p></div>
             </div>
         </header>
         <nav class="navigacija sirina" id="meni">
-            <ul>
-                <li><a href="index.html">#Naslovna</a></li>
-                <li><a href="#strani">Strani</a></li>
-                <li><a href="#domaci">Domaći</a></li>
-                <li><a href="#autor">Autor</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-                <li><i class="fas fa-cart-arrow-down font vid" id="korpa2">
-                </i><a href="#kontakt"><i class="fas fa-envelope-open-text font vid"></i></a></li>
-                <li><a href="javascript:void(0);" class="icon" onclick="sakri()"><i class="fa fa-bars"></i></a></li>
-                <div id="stanje2"><p>Broj knjiga:</p></div>
-            </ul>
         </nav>
         <hr class="hr-tekst" data-content="Ekranizovane &nbsp;Knjige">
+        
         <div class="slajder">
-            <div class="slajdovi prviSlajd">
-                <div id="knjige" class="d-flex sirina">
-                    <div class="knjiga">
-                        <img src="img/knjiga.png" alt="korica-od-knjige-sa-glavom-zmaja"/>
-                    </div>
-                    <div class="knjiga">
-                        <img src="img/knjiga3.png" alt="korica-od-knjige-sa-krunom"/>
-                    </div>
-                    <div class="knjiga">
-                        <img src="img/knjiga2.png" alt="korica-od-knjige-sa-viteškim-šlemom"/>
-                    </div>
-                    <div class="knjiga">
-                        <img src="img/knjiga4.png" alt="korica-od-knjige-sa-štitom"/>
-                    </div>
-                </div>
-            </div>
-            <div class="slajdovi">
-                <div id="knjige" class="d-flex sirina">
-                    <div class="knjiga">
-                       <img src="img/harry4.png" alt="korica-od-knjige-sa-metaforom">
-                    </div>
-                    <div class="knjiga">
-                        <img src="img/harry3.png" alt="korica-od-knjige-sa-peharom"/>
-                    </div>
-                    <div class="knjiga">
-                       <img src="img/harry1.png" alt="korica-od-knjige-sa-feniksom"/>
-                    </div>
-                    <div class="knjiga">
-                        <img src="img/harry2.png" alt="korica-od-knjige-sa-metaforom2"/>
-                    </div>
-                </div>
-            </div>
-            <div class="slajdovi">
-                <div id="knjige" class="d-flex sirina">
-                    <div class="knjiga">
-                        <img src="img/tw1.png" alt="korica-od-knjige-sa-crvenom-jabukom"/>
-                    </div>
-                    <div class="knjiga">
-                       <img src="img/tw2.png" alt="korica-od-knjige-sa-cvetom"/>
-                    </div>
-                    <div class="knjiga">
-                     <img src="img/tw3.png" alt="korica-od-knjige-sa-pokidanom-mašnom"/>
-                    </div>
-                    <div class="knjiga">
-                       <img src="img/tw4.png" alt="korica-od-knjige-sa-šahovskim-figurama"/>
-                    </div>
-                </div>
-            </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <ul id="autoWidth" class="cs-hidden">
+            </ul>
         </div>
+        
         <div id="baner">
             <div id="tekstUnutraSlike">
                 <h1 class="margina">Akcija 40% na svim stranim knjigama</h1>
@@ -105,81 +52,18 @@
                 <h3>#Udubite se u svet mašte</h3>
             </div>
         </div>
-        <div class="izdavaci sirina">
+
+        <div id="strani" class="sirina gornja">
             <h1 class="linija"><a name="strani">Strani Pisci</a></h1>
-            <div class="region d-flex" id="prvi">
-                <div class="artikl">
-                    <a name="the fellowsip of the ring"><img src="img/lord.png" alt="korica-od-knjige-sa-prstenima" /></a>
-                    <br/>
-                    <h3>The fellowsip of the ring</h3>
-                    <h4>J.R.R. TOLKIEN </h4>
-                    <span><h4>1.282 din</h4></span>
-                    <button class="dugme" onClick="broji()">DODAJ U KORPU</button>
-                </div>
-                <div class="artikl">
-                    <a name="it"><img  src="img/it.png" alt="korica-od-knjige-sa-dečakom-u-žutoj-kabanici" /></a>
-                    <br/>
-                    <h3>IT</h3>
-                    <h4>STEPHEN KING</h4>
-                    <span><h4>1.300 din</h4></span>
-                    <button class="dugme" onClick="broji()">DODAJ U KORPU</button>
-                </div>
-                <div class="artikl">
-                    <a name="ready player two"><img  src="img/player.jpg" /></a>
-                    <br/>
-                    <h3>Ready player two</h3>
-                    <h4>ERNEST CLINE</h4>
-                    <span><h4>1.100 din</h4></span>
-                    <button class="dugme" onClick="broji()">DODAJ U KORPU</button>
-                </div>
-                <div class="artikl">
-                    <a name="the mistery knight"><img src="img/MysteryKnight.jpg" alt="korica-od-knjige-sa-viteškim-štitom" /></a>
-                    <br/>
-                    <h3>The mistery knight</h3>
-                    <h4>GEORGE R.R MARTIN</h4>
-                    <span><h4>2.500 din</h4></span>
-                    <button class="dugme" onClick="broji()">DODAJ U KORPU</button>
-                </div>
+            <div id="prvi" class="region d-flex" >
             </div>
         </div>
-        <div class="izdavaci sirina">
+        <div id="domaci" class="sirina">
             <h1 class="linija"><a name="domaci">Domaći Pisci</a></h1>
             <div class="region d-flex" id="drugi">
-                <div class="artikl">
-                    <a name="zamalek"><img src="img/zamalek.png" alt="korica-od knjige-sa-balegarom"/></a>
-                    <br/>
-                    <h3>Zamalek</h3>
-                    <h4>DEJAN STANKOVIĆ</h4>
-                    <span><h4>900 din</h4></span>
-                    <button class="dugme" onClick="broji()">DODAJ U KORPU</button>
-                </div>
-                <div class="artikl">
-                    <a name="znakovi"><img src="img/andric.png" alt="korica-od knjige-sa-zlatnim-slovima"/></a>
-                    <br/>
-                    <h3>Znakovi pored puta</h3>
-                    <h4>IVO ANDRIĆ</h4>
-                    <span><h4>1.300 din</h4></span>
-                    <button class="dugme" onClick="broji()">DODAJ U KORPU</button>
-                </div>
-                <div class="artikl">
-                    <a name="konstantnovo"><img src="img/konstantinovo.png" alt="korica-od knjige-sa-mačem"/></a>
-                    <br/>
-                    <h3>Konstantinovo raskršće</h3>
-                    <h4>DEJAN STOJILJKOVIĆ</h4>
-                    <span><h4>800 din</h4></span>
-                    <button class="dugme" onClick="broji()">DODAJ U KORPU</button>
-                </div>
-                <div class="artikl">
-                    <a name="austrijanka"><img src="img/austrijanka.png" alt="korica-od knjige-sa-devojkom"/></a>
-                    <br/>
-                    <h3>Austrijanka</h3>
-                    <h4>ZORAN MILEKIĆ</h4>
-                    <span><h4>900 din</h4></span>
-                    <button class="dugme" onClick="broji()">DODAJ U KORPU</button>
-                </div>
             </div>
         </div>
-        <div id="oAutoru" class="sirina">
+        <div id="oAutoru" class="sirina gornja">
             <h1 class="linija"><a name="autor">Autor</a></h1>
             <div class="region d-flex">
                 <div id="blokSaSlikom">
@@ -187,7 +71,7 @@
                 </div>
                 <div class="blok1">
                     <h3>Moje ime je Anica Radenković</h3>
-                    <p><span>Datum rođenja: </span>14.02.2002</p>
+                     <p><span>Datum rođenja: </span>14.02.2002</p>
                     <p><span>Satatus:</span> Student</p>
                     <p><span>Mesto studiranja:</span> Visoka ICT škola</p>
                     <p><span>Modul: </span>Web programiranje</p>
@@ -202,18 +86,18 @@
                     <h3>Vaša porudžbina</h3>
                     <form method="GET" action="#" name="forma1">
                         <div id="poljeImePrezime">
-                            <label for="imePrezime">Ime i prezime:</label>
+                            <label for="imePrezime">Ime i prezime: *</label>
                             <input type="text" name="imePrezime" id="imePrezime" placeholder="Petar Petrović"/>
                             <p></p>
                         </div>
                         <div id="poljeAdresa">
-                            <label for="adresa">Adresa:</label>
+                            <label for="adresa">Adresa: *</label>
                             <input type="text" name="adresa" id="adresa"  placeholder="Ljubiće Luković 12"/>
                             <p></p>
                         </div>
                         <div id="telefon">
-                            <label for="brojTelefona">Broj telefona:</label>
-                            <input type="text" name="brojTelefona" id="brojTelefona"  placeholder="06x xx xx xxx"/><br/>
+                            <label for="brojTelefona">Broj telefona: *</label>
+                            <input type="text" name="brojTelefona" id="brojTelefona"  placeholder="06x xx xx xxx"/>
                             <p></p>
                         </div>
                         <div id="plati">
@@ -223,8 +107,15 @@
                                     <option value="gotovina">Pri uzeću</option>
                                     <option value="kartica">Karticom</option>
                                 </select>
+                              
                             </label>
                             <p></p>
+                        </div>
+                        <div id="upit">
+                            <label>Koji žanr rado čitate</label><br/>
+                            <input type="checkbox" name="chDrm" id="chDrm" value="drama"> Drama<br/>
+                            <input type="checkbox" name="chKrim" id="chKrim" value="krimi"> Kriminalistički<br/>
+                            <input type="checkbox" name="chKom" id="chKom" value="komedija"> Komedija
                         </div>
                         <div id="isporuci">
                             <label for="isporuka">Isporuka:</label><br/>
@@ -236,8 +127,6 @@
                         <div class="forma">
                             <input type="button" id="poruci" value="PORUČI" onClick="provera()"/>
                             <p></p>
-                        </div>
-                        <div id="ispis">
                         </div>
                     </form>
                 </div>
@@ -264,37 +153,29 @@
                 </div>
             </div>
         </div>
-        <footer class="sirina d-flex">
-           <div class="deo">
-                <h3>PORTAL</h3>
-                <div id=meniDonji>
-                    <ul>
-                        <li><a href="index.html">Naslovna</a></li>
-                        <li><a href="#strani">Strani</a></li>
-                        <li><a href="#domaci">Domaći</a></li>
-                        <li><a href="#autor">Autor</a></li>
-                        <li><a href="#kontakt">Kontakt</a></li>
-                    </ul>
-                </div>
-           </div>
-           <div class="deo">
-               <h3>INFO</h3>
-               <p><i class="fas fa-phone"></i> &nbsp; +381 065 57 63 022</p>
-               <p><i class="fas fa-envelope"></i> &nbsp; portal@gmail.com</p>
-           </div>
-           <div class="deo">
-               <h3>PRATITE NAS NA</h3>
-                <a href="https://www.instagram.com/_sweetheart55_/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://twitter.com/anika99black" target="_blank"><i class="fab fa-twitter-square"></i></a>
-                <a href="https://www.linkedin.com/in/anica-radenkovi%C4%87-9519b3206/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.facebook.com/anica.radenkovic96/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-                <a href="https://github.com/anica02" target="_blank"><i class="fab fa-github-square"></i></a>
-           </div>
-           <div class="deo"> 
-               <h3>DODATNO</h3>
-               <a href="Dokument/Dokumentacija.pdf" target="_blank">Dokumentacija</a>
-           </div>
+        <footer id="futer" class="sirina">
+            <div class="region2  d-flex">
+                <div class="deo">
+                    <h3>PORTAL</h3>
+                    <p>Mesto mašte</p>
+               </div>
+               <div class="deo">
+                   <h3>INFO</h3>
+                   <p><i class="fas fa-phone"></i> &nbsp; +381 065 57 63 022</p>
+                   <p><i class="fas fa-envelope"></i> &nbsp; portal@gmail.com</p>
+               </div>
+               <div class="deo" id="dodat">
+                   <h3>PRATITE NAS NA</h3>
+               </div>
+               <div class="deo"> 
+                   <h3>DODATNO</h3>
+                   <a href="Dokument/Dokumentacija.pdf" target="_blank">Dokumentacija</a>
+               </div>
+            </div>
+            <div class="gornja"><p>Copyright &copy; Portal Knjižara</p></div>
         </footer>
+
+        
     </body>
 </html>
 

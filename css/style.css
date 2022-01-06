@@ -20,6 +20,21 @@ header{
     background-color:#fff;
     padding:7px 0px;
 }
+#meni{
+    position: sticky;
+    top:0%;
+    z-index:1;
+    text-align: center;
+    border-bottom: #EB5E28 2px solid;
+    border-top: #EB5E28 2px solid;
+    background-color: #fff;
+    padding:10px 0px;
+    overflow: hidden;
+    color:#252422;
+    border-radius: 2px;
+    width:90%;
+   
+}
 .d-flex{
     display: flex;
     justify-content: space-between;
@@ -32,6 +47,17 @@ nav ul li a{
     font-size:20px;
     color:#252422;
     margin:0px 10px;
+    font-weight: bold;
+}
+
+nav ul li a:hover{
+    background-color: #EB5E28;
+    padding:5px;
+    color:#fff;
+    border-radius: 3px;
+}
+#ikonicaHamburger{
+    display: none;
 }
 #slika{
     width:15%;
@@ -52,15 +78,6 @@ nav ul li a{
 .fa-search{
 margin-left:10px;
 }
-.navigacija{
-    text-align: center;
-    background-color:#EB5E28;
-    padding:10px 0px;
-    overflow: hidden;
-    color:#252422;
-    border-radius: 2px;
-    width:90%;
-}
 .navigacija ul{
     padding:0px;
 }
@@ -71,6 +88,7 @@ margin-left:10px;
 #dodatneStavke{
     width:12%;
     position: relative;
+    text-align: center;
 }
 #stanje{
     width:100%;
@@ -137,65 +155,37 @@ hr{
     width:90%;
     margin:0px auto;
 }
-#knjige{
-    margin-top:0px;
-    padding:30px 0px;
+.slajder {
+    width:90%;
+    margin:0px auto;
+    height:40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+
 }
-.knjiga{
-    width:50%;
+.box{
+    width:100%;
+    height: 40vh;
     text-align: center;
+    padding: 0px 50px;
     
 }
-.knjiga img{
-    width:60%;
-    position: relative;
+.box img{
+    width:100%;
+    height:inherit;
 }
-.knjiga a:hover{
-    opacity:0.8;
+.box:hover{
+    transform-style:preserve-3d;
+    transform: scale(1.02);
+    transition:all ease 0.03;
+
 }
-.slajder {
-    max-width: 90%;
-    position: relative;
-    margin:auto;
-}
-.slajdovi {
-    display: none;
-}
-.prviSlajd{
-    display:block;
-} 
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: #252422;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-} 
 #dodaj{
     display: none;
 }
-.tranzicija{
-      animation-name:tranzicija;
-      animation-duration: 2.5s;
-}
-@keyframes tranzicija {
-       0%{left:0px;}
-       100%{right:-500px;}
-}
+
 #baner{
      width:90%;
      height:600px;
@@ -217,8 +207,11 @@ hr{
 .margina{
     margin-bottom: 20px;
 }
-.izdavaci{
+.gornja{
     margin-top: 30px;  
+}
+#upit{
+    text-align: left;
 }
 .linija{
     color:#252422;
@@ -243,6 +236,9 @@ hr{
     width:100%;
     margin-bottom: 50px;
 }
+.region2{
+     width:100%;
+}
 .artikl{
     width:20%;
     text-align: center;
@@ -251,7 +247,7 @@ hr{
 .artikl img{
     width:70%;
 }
-span h4{
+span p{
     font-weight: bold;
     margin:5px 0px;
     border-bottom: 2px solid #EB5E28;
@@ -269,6 +265,7 @@ p span{
     font-weight: bold;
     margin-top: 10px;
 }
+
 .blok1{
    width:47%;
    position: relative;
@@ -408,19 +405,7 @@ footer{
     color:#fff;
     border-radius: 2px;
 }
-#meniDonji{
-    text-align: left;
-}
-#meniDonji ul{
-    list-style-type: none;
-    padding-left: 0px;
-}
-#meniDonji ul li a{
-    text-decoration:none;
-    font-size:16px;
-    color:#fff;
-    border-bottom: 1px solid #fff;
-}
+
 .deo{
     text-align: center;
 }
@@ -486,6 +471,9 @@ footer{
         width: 45%;
         margin-right: 5%;
         box-shadow: -30px -20px #EB5E28;
+    }
+    .box{
+        padding: 0px 25px;
     }
 }
 @media screen and (max-width:769px){
@@ -559,6 +547,9 @@ footer{
     .blok1 h3{
         font-size: 19px;
     }
+    .box{
+        padding: 0px 20px;
+    }
 }
 @media screen and (max-width: 500px) { 
     
@@ -568,9 +559,6 @@ footer{
     }
     .d-flex{
         display:block;
-    }
-    .navigacija ul{
-        padding:10px;
     }
     #novosti{
         width:100%;
@@ -589,35 +577,32 @@ footer{
     #dodatneStavke{
         width:100%;
     }
-    i.hid{
-        display: none;
+    #dodatneStavke{
+        width:100%;
+        margin:10px 0px;
     }
+    
 }
 
 @media screen and (max-width:426px){
-    .navigacija.responsive{
+    #meni{
         position:relative;
-
+        position: sticky;
+        top:0%;
+        z-index:1;
     }
-    .navigacija.responsive .icon{
-        position:absolute;
-        right:0px;
-        top:15px;
-    }
-    .navigacija.responsive a{
+    #ikonicaHamburger{
         display: block;
-        text-align:left;
-        margin-bottom: 10px;
     }
-    .navigacija.responsive li i {
-        float:left;
-        margin-left:5px;
-        display:block;
+    .aLinkoviMenia{
+        display: block;
+        text-align:center;
+        margin-bottom: 5px;
     }
     header{
         padding:10px 5px;
     }
-    .navigacija{
+    #meni{
         width:100%;
     }
     #slika{
@@ -625,10 +610,6 @@ footer{
     }
     nav  a{
         display: none;
-    }
-    nav a.icon{
-        display: block;
-        margin-right:20px;
     }
     #baner{
         height:200px;
@@ -643,9 +624,6 @@ footer{
     }
     nav ul li a{
         font-size:18px;
-    }
-    .vid i{
-        font-size:25px;
     }
     #novosti{
         font-size:14px;
@@ -700,6 +678,15 @@ footer{
     .blok1 h3{
         font-size: 18px;
     }
+    .box{
+        padding: 0px 5px;
+    }
+    
+}
+@media screen and (max-width:376px){
+    .box{
+        padding: 0px 60px;
+    }
 }
 @media screen and (max-width:325px){
 
@@ -751,5 +738,7 @@ footer{
   .artikl h4{
     font-size: 16px; 
    }
-    
+   .box{
+    padding: 0px 50px;
+}
 }
