@@ -51,8 +51,9 @@ function dohvatiSadrzaj(){
 }
 function nestani(){
   document.querySelector("#pretragaKnjiga > p").classList.add("sakriP");
-  document.querySelector("#linkKnjige > a").classList.add("sakriP");
+ document.querySelector("#linkKnjige > a").classList.add("sakriP");
 }
+
 
 //KORPA
 
@@ -72,28 +73,28 @@ $(document).ready(function(){
 
 
 
-let ulTag = document.querySelector("#autoWidth");
-let nizAlt = ["korica-od-knjige-sa-glavom-zmaja","korica-od-knjige-sa-krunom","korica-od-knjige-sa-viteškim-šlemom","korica-od-knjige-sa-štitom","korica-od-knjige-sa-metaforom",
-              "korica-od-knjige-sa-peharom","korica-od-knjige-sa-feniksom","korica-od-knjige-sa-metaforom2", "korica-od-knjige-sa-crvenom-jabukom","korica-od-knjige-sa-cvetom",
-              "korica-od-knjige-sa-pokidanom-mašnom","korica-od-knjige-sa-šahovskim-figurama"];
-let nizSrc=["img/knjiga.png", "img/knjiga3.png","img/knjiga2.png", "img/knjiga4.png", "img/harry4.png", "img/harry3.png", "img/harry1.png", "img/harry2.png", "img/tw1.png",
-            "img/tw2.png", "img/tw3.png", "img/tw4.png"];
-for(let l=0; l<nizAlt.length; l++){
-  let liTag = document.createElement("li");
-  liTag.setAttribute("class", "iteam-a");
+// let ulTag = document.querySelector("#autoWidth");
+// let nizAlt = ["korica-od-knjige-sa-glavom-zmaja","korica-od-knjige-sa-krunom","korica-od-knjige-sa-viteškim-šlemom","korica-od-knjige-sa-štitom","korica-od-knjige-sa-metaforom",
+//               "korica-od-knjige-sa-peharom","korica-od-knjige-sa-feniksom","korica-od-knjige-sa-metaforom2", "korica-od-knjige-sa-crvenom-jabukom","korica-od-knjige-sa-cvetom",
+//               "korica-od-knjige-sa-pokidanom-mašnom","korica-od-knjige-sa-šahovskim-figurama"];
+// let nizSrc=["img/knjiga.png", "img/knjiga3.png","img/knjiga2.png", "img/knjiga4.png", "img/harry4.png", "img/harry3.png", "img/harry1.png", "img/harry2.png", "img/tw1.png",
+//             "img/tw2.png", "img/tw3.png", "img/tw4.png"];
+// for(let l=0; l<nizAlt.length; l++){
+//   let liTag = document.createElement("li");
+//   liTag.setAttribute("class", "iteam-a");
 
-  let divSaKnjigom = document.createElement("div");
-  divSaKnjigom.setAttribute("class", "box");
+//   let divSaKnjigom = document.createElement("div");
+//   divSaKnjigom.setAttribute("class", "box");
 
-  let slika = document.createElement("img");
-  slika.setAttribute("src", `${nizSrc[l]}`);
-  slika.setAttribute("alt", `${nizAlt[l]}`);
+//   let slika = document.createElement("img");
+//   slika.setAttribute("src", `${nizSrc[l]}`);
+//   slika.setAttribute("alt", `${nizAlt[l]}`);
 
-  divSaKnjigom.appendChild(slika);
-  liTag.appendChild(divSaKnjigom);
+//   divSaKnjigom.appendChild(slika);
+//   liTag.appendChild(divSaKnjigom);
 
-  ulTag.appendChild(liTag);
-}
+//   ulTag.appendChild(liTag);
+// }
 
 $(document).ready(function(){
   $('#autoWidth').lightSlider({

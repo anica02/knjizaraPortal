@@ -182,6 +182,7 @@ hr{
     transition:all ease 0.03;
 
 }
+
 #dodaj{
     display: none;
 }
@@ -444,7 +445,11 @@ footer{
     }
 }
 
-
+@media screen and (max-width:1442px){
+    li.iteam-a.lslide{
+        margin:0px 42px;
+    }
+}
 @media screen and (max-width:1026px){
     #baner{
         background-size: contain;
@@ -472,8 +477,8 @@ footer{
         margin-right: 5%;
         box-shadow: -30px -20px #EB5E28;
     }
-    .box{
-        padding: 0px 25px;
+    li.iteam-a.lslide{
+        margin:0px 48px;
     }
 }
 @media screen and (max-width:769px){
@@ -547,8 +552,8 @@ footer{
     .blok1 h3{
         font-size: 19px;
     }
-    .box{
-        padding: 0px 20px;
+    li.iteam-a.lslide{
+        margin:0px 35px;
     }
 }
 @media screen and (max-width: 500px) { 
@@ -678,14 +683,18 @@ footer{
     .blok1 h3{
         font-size: 18px;
     }
-    .box{
-        padding: 0px 5px;
+    li.iteam-a.lslide{
+        margin:0px 10px;
     }
     
 }
 @media screen and (max-width:376px){
-    .box{
-        padding: 0px 60px;
+    li.iteam-a.lslide{
+        margin:0px 5px;
+    }
+    
+    .slajder{
+        width:100%;
     }
 }
 @media screen and (max-width:325px){
@@ -738,7 +747,12 @@ footer{
   .artikl h4{
     font-size: 16px; 
    }
-   .box{
-    padding: 0px 50px;
+   
+   li.iteam-a.lslide{
+       margin:0px 58px;
+   }
+   .slajder{
+       width:90%;
+   }
 }
-}
+
