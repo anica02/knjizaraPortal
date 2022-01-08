@@ -158,30 +158,16 @@ hr{
 .slajder {
     width:90%;
     margin:0px auto;
-    height:40vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+}
+.knjiga{
+    width:50%;
+}
+.knjiga img{
+    width:70%;
+    height:37vh;
+} 
 
-}
-.box{
-    width:100%;
-    height: 40vh;
-    text-align: center;
-   
-    
-}
-.box img{
-    width:100%;
-    height:inherit;
-}
-.box:hover{
-    transform-style:preserve-3d;
-    transform: scale(1.02);
-    transition:all ease 0.03;
-
-}
 
 #dodaj{
     display: none;
@@ -446,9 +432,7 @@ footer{
 }
 
 @media screen and (max-width:1442px){
-    li.iteam-a.lslide{
-        margin:0px 42px;
-    }
+    
 }
 @media screen and (max-width:1026px){
     #baner{
@@ -466,9 +450,6 @@ footer{
         padding:6% 5%;
         width:40%;
     }
-    .knjiga img{
-        width:70%;
-    }
     .artikl{
         width:23%;
     }
@@ -476,9 +457,6 @@ footer{
         width: 45%;
         margin-right: 5%;
         box-shadow: -30px -20px #EB5E28;
-    }
-    li.iteam-a.lslide{
-        margin:0px 48px;
     }
 }
 @media screen and (max-width:769px){
@@ -552,9 +530,7 @@ footer{
     .blok1 h3{
         font-size: 19px;
     }
-    li.iteam-a.lslide{
-        margin:0px 35px;
-    }
+   
 }
 @media screen and (max-width: 500px) { 
     
@@ -639,13 +615,7 @@ footer{
     #pretragaKnjiga input[type="search"]{
         font-size:12px;
     }
-    #knjige{
-        padding:0px;
-        width:100%;
-    }
-    .knjiga{
-           width:70%;
-     }
+    
     .artikl{
         width:70%;
     }
@@ -667,10 +637,7 @@ footer{
         box-shadow: -30px -20px #EB5E28;
         margin-left:15%;
     }
-    .knjiga img {
-        width: 70%;
-        margin-bottom: 20px;
-    }
+   
     #meniDonji{
         text-align: center;
     }
@@ -683,18 +650,15 @@ footer{
     .blok1 h3{
         font-size: 18px;
     }
-    li.iteam-a.lslide{
-        margin:0px 10px;
+    .knjiga img {
+        width: 90%;
     }
+   
     
 }
 @media screen and (max-width:376px){
-    li.iteam-a.lslide{
-        margin:0px 5px;
-    }
-    
-    .slajder{
-        width:100%;
+    .knjiga img {
+        width: 80%;
     }
 }
 @media screen and (max-width:325px){
@@ -734,13 +698,6 @@ footer{
    #pretragaKnjiga input[type="search"]{
        font-size:12px;
    }
-   #knjige{
-    padding:0px;
-    width:100%;
-   }
-   .knjiga{
-       width:70%;
-   }
    .artikl h3{
     font-size: 18px;
     }
@@ -748,11 +705,7 @@ footer{
     font-size: 16px; 
    }
    
-   li.iteam-a.lslide{
-       margin:0px 58px;
-   }
-   .slajder{
-       width:90%;
-   }
+  
+   
 }
 
