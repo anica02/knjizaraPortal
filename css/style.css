@@ -458,6 +458,9 @@ footer{
         margin-right: 5%;
         box-shadow: -30px -20px #EB5E28;
     }
+    .knjiga img {
+        width: 90%;
+    }
 }
 @media screen and (max-width:769px){
     nav{
