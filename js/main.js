@@ -23,8 +23,6 @@ divMeni.innerHTML = ispisMeni;
     });
   });
 
- 
- 
 //PRETRAGA
 
 function dohvatiSadrzaj(){

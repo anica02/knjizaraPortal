@@ -286,19 +286,19 @@ p span{
     box-shadow: -40px -20px #252422;
 }
 #oAutoru{
-    border-top:15px solid #EB5E28;
-    border-left:15px solid #EB5E28;
-    border-style: inset;
+    border-bottom:15px solid #EB5E28;
+    border-right:15px solid #EB5E28;
+    border-style: outset;
     border-radius: 5px;
     margin-bottom: 80px;
     padding:30px 0px;
     z-index: -1;
 }
 #kontakt{
-    border-bottom:#EB5E28 10px solid;
-    border-right:#EB5E28 10px solid;
+    border-top:#EB5E28 10px solid;
+    border-left:#EB5E28 10px solid;
     border-radius: 5px;
-    border-style: outset;
+    border-style: inset;
     margin-bottom: 40px;
     padding:30px 0px;
 }
