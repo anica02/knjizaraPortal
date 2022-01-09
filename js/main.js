@@ -1,5 +1,5 @@
 
-//nav
+//NAV
 
 let meniHref = ["#naslovna", "#strani", "#domaci", "#autor", "#kontakt"];
 let meniTekst = ["Naslovna", "Strani", "Domaći", "Autor", "Kontakt"];
@@ -19,6 +19,14 @@ $(document).ready(function(){
       $('#meni ul li').addClass('aLinkoviMenia');
     })
 });
+
+$(document).ready(function(){
+  $('#meni ul li a').hover(function(){
+    $(this).addClass('dodatHover');
+  }, function(){
+    $(this).removeClass('dodatHover');
+  });
+})
 
 //PRETRAGA
 
@@ -49,6 +57,7 @@ function dohvatiSadrzaj(){
   }
   
 }
+
 function nestani(){
   document.querySelector("#pretragaKnjiga > p").classList.add("sakriP");
  document.querySelector("#linkKnjige > a").classList.add("sakriP");
@@ -69,9 +78,7 @@ $(document).ready(function(){
     });
 });
 
-//slajder
-
-
+//SLAJDER
 
 let divKnjige = document.querySelector(".slajder");
 let nizAlt = ["korica-od-knjige-sa-glavom-zmaja","korica-od-knjige-sa-krunom","korica-od-knjige-sa-viteškim-šlemom","korica-od-knjige-sa-štitom","korica-od-knjige-sa-metaforom",
@@ -83,6 +90,7 @@ for(let l=0; l<nizAlt.length; l++){
  
   let divSaKnjigom = document.createElement("div");
   divSaKnjigom.setAttribute("class", "knjiga");
+ 
 
   let slika = document.createElement("img");
   slika.setAttribute("src", `${nizSrc[l]}`);
@@ -137,9 +145,8 @@ $('.slajder').slick({
   ]
 });
 
-
-
 //knjige
+
 
 let nizKnjiga = ["img/lord.png", "img/it.png", "img/player.png", "img/MysteryKnight.png"];
 let nizKnjiga2 = ["img/zamalek.png","img/andric.png","img/konstantinovo.png","img/austrijanka.png"];
@@ -161,7 +168,7 @@ let regionKnjiga2 = document.querySelector("#drugi");
 for(let k=0; k<nizAutori.length; k++){
 
   let artikl = document.createElement("div");
-  artikl.setAttribute("class", "artikl");
+  artikl.setAttribute("class", "artikl pojava");
 
   let novaKnjiga = document.createElement("img");
   novaKnjiga.setAttribute("alt", `${nizKnjigaAlt[k]}`);
@@ -200,7 +207,7 @@ for(let k=0; k<nizAutori.length; k++){
 for(let p=0; p<nizAutori2.length; p++){
 
   let artikl2 = document.createElement("div");
-  artikl2.setAttribute("class", "artikl");
+  artikl2.setAttribute("class", "artikl pojava");
 
   let novaKnjiga2 = document.createElement("img");
   novaKnjiga2.setAttribute("alt", `${nizKnjigaAlt2[p]}`);
@@ -235,14 +242,33 @@ for(let p=0; p<nizAutori2.length; p++){
   regionKnjiga2.appendChild(artikl2);
 }
 
+window.addEventListener("scroll", pojavi);
+function pojavi(){
+ let pojava = document.querySelectorAll(".pojava");
+
+ for(let p=0; p<pojava.length; p++){
+   let visinaProzora = window.innerHeight; 
+   let pojavaGornja = pojava[p].getBoundingClientRect().top;
+   let pojavaTacka = 150;
+
+   if(pojavaGornja < visinaProzora - pojavaTacka){
+     pojava[p].classList.add('active');
+   }
+   else{
+    pojava[p].classList.remove('active');
+   }
+ }
+}
+
+
 
 //OBRADA FORME
 
 function provera(){
 
-  var imePrezime,adresa, brojTelefona, placanje, isporuka, nizPodaci;
+  var imePrezime,adresa, brojTelefona, placanje, nizZanr, isporuka, nizPodaci;
   var vrednostImePrezime, vrednostAdresa;
-  nizTacnih = [];
+  nizPodaci = [];
   imePrezime = document.querySelector("#imePrezime");
   vrednostImePrezime = imePrezime.value;
   adresa = document.querySelector("#adresa");
@@ -250,7 +276,10 @@ function provera(){
   brojTelefona = document.querySelector("#brojTelefona");
   vrednostTelefon = brojTelefona.value;
   placanje = document.querySelector("#placanje");
+  nizZanr = document.getElementsByName("ch");
   isporuka = document.getElementsByName("isporuka");
+
+  let brojGreske=0;
 
   //proveri ime i prezime
 
@@ -259,10 +288,12 @@ function provera(){
   if(reImePrezime.test(vrednostImePrezime)){
     document.querySelector("#poljeImePrezime > p").innerHTML = `<i class="far fa-check-circle"></i>`;
     document.querySelector("#poljeImePrezime > p").style.color = "green";
+    nizPodaci.push(vrednostImePrezime);
   }
   else{
     document.querySelector("#poljeImePrezime > p").innerHTML = `<i class="fas fa-exclamation-circle"></i> Ime i prezime nije ispravno uneto`;
     document.querySelector("#poljeImePrezime > p").style.color = "red";
+    brojGreske++;
     
   }
   
@@ -273,10 +304,12 @@ function provera(){
   if(reAdresa.test(vrednostAdresa)){
     document.querySelector("#poljeAdresa > p").innerHTML = `<i class="far fa-check-circle"></i>`;
     document.querySelector("#poljeAdresa > p").style.color = "green";
+    nizPodaci.push(vrednostAdresa);
   }
   else{
     document.querySelector("#poljeAdresa > p").innerHTML = `<i class="fas fa-exclamation-circle"></i> Adresa nije ispravno uneta`;
     document.querySelector("#poljeAdresa > p").style.color = "red";
+    brojGreske++;
 
   }
    //proveri telefon
@@ -285,10 +318,13 @@ function provera(){
    if(reTelefon.test(vrednostTelefon)){
     document.querySelector("#telefon > p").innerHTML = `<i class="far fa-check-circle"></i>`;
     document.querySelector("#telefon > p").style.color = "green";
+    nizPodaci.push(vrednostTelefon);
+   
    }
    else{
      document.querySelector("#telefon > p").innerHTML = `<i class="fas fa-exclamation-circle"> Telefon nije unet u ispravnom formatu`;
      document.querySelector("#telefon > p").style.color = "red";
+     brojGreske++;
      
    }
 
@@ -297,11 +333,24 @@ function provera(){
   if(placanje.options[placanje.options.selectedIndex].value=="0"){
     document.querySelector("#plati > p").innerHTML = `<i class="fas fa-exclamation-circle"> Morate izabrati način plaćanja`;
     document.querySelector("#plati > p").style.color = "red";
+    brojGreske++;
   }
   else{
     document.querySelector("#plati > p").innerHTML = `<i class="far fa-check-circle"></i>`;
     document.querySelector("#plati > p").style.color = "green";
+    nizPodaci.push(placanje.options[placanje.options.selectedIndex].text);
   }
+
+  // provera checkbox-a
+  var vrednostZanr=" ";
+   for(let z=0; z<nizZanr.length; z++){
+     if(nizZanr[z].checked){
+
+       vrednostZanr += nizZanr[z].value + " ";
+       nizPodaci.push(vrednostZanr);
+     }
+   }
+   
 
   //provera radio 
 
@@ -315,20 +364,47 @@ function provera(){
   if(vrednostIsporuka==" "){
     document.querySelector("#isporuci > p").innerHTML = `<i class="fas fa-exclamation-circle"> Morate izabrati način isporuke`;
     document.querySelector("#isporuci > p").style.color = "red";
+    brojGreske++;
   }
   else{
     document.querySelector("#isporuci > p").innerHTML = `<i class="far fa-check-circle"></i>`;
     document.querySelector("#isporuci > p").style.color = "green";
-    
+    nizPodaci.push(vrednostIsporuka);
   }
-  let pTagoviPoruci=document.querySelectorAll("#porudzbina p")
 
+
+  if(nizPodaci.length>0){
+    var ispis="Vasi podaci\n";
+    for(let podatak of nizPodaci){
+        ispis+=`${podatak}\n`;
+      }
+  }
+
+  if(brojGreske==0){
+    alert("Porudžbina je uspešna\n\n"+`${ispis}`);
+
+  }
+
+  $(document).ready(function(){
+  
+    $('#poruci').click(function(){
+      
+        if(brojGreske==0) {
+          $('#poruci').val("PORUČENO");
+        } else {
+          $('#poruci').val("PORUČI");
+        }
+      });
+  });
+
+
+  
   
 }
 
 
 function provera2(){
-  var imePrezime2, email, poruka;
+  var imePrezime2, email, poruka, greske;
   var vrednostImePrezime2, vrednotEmail, vrednostPoruka;
 
   imePrezime2 = document.querySelector("#imePrezime2");
@@ -337,41 +413,63 @@ function provera2(){
   vrednotEmail = email.value;
   poruka = document.querySelector("#vasaPoruka");
   vrednostPoruka = poruka.value;
+  greske=0;
 
   //proveri ime i prezime
 
   let reImePrezime2=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}$/;
   if(reImePrezime2.test(vrednostImePrezime2)){
-    document.querySelector("#poljeImePrezime2 > p").innerHTML = "Ime i prezime je prosleđeno";
+    document.querySelector("#poljeImePrezime2 > p").innerHTML =`<i class="far fa-check-circle"></i>`;
     document.querySelector("#poljeImePrezime2 > p").style.color = "green";
   }
   else{
-    document.querySelector("#poljeImePrezime2 > p").innerHTML = "Ime i prezime nije ispravno uneto";
+    document.querySelector("#poljeImePrezime2 > p").innerHTML = `<i class="fas fa-exclamation-circle">Ime i prezime nije ispravno uneto`;
     document.querySelector("#poljeImePrezime2 > p").style.color = "red";
+    greske++;
     
   }
   //provera email-a
 
   let reEmail=/^\w([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
   if(reEmail.test(vrednotEmail)){
-    document.querySelector("#poljeEmail > p").innerHTML = "Email je prosleđen";
+    document.querySelector("#poljeEmail > p").innerHTML =`<i class="far fa-check-circle"></i>`;
     document.querySelector("#poljeEmail > p").style.color = "green";
   }
   else{
-    document.querySelector("#poljeEmail > p").innerHTML = "Email nije unet u ispravnom formatu";
+    document.querySelector("#poljeEmail > p").innerHTML = `<i class="fas fa-exclamation-circle">Email nije unet u ispravnom formatu`;
     document.querySelector("#poljeEmail > p").style.color = "red";
+    greske++;
     
   }
 
   //proveri poruku
 
   if(vrednostPoruka.length<=0){
-    document.querySelector("#poljePoruka > p").innerHTML = "Niste uneli poruku";
+    document.querySelector("#poljePoruka > p").innerHTML = `<i class="fas fa-exclamation-circle">Niste uneli poruku`;
     document.querySelector("#poljePoruka > p").style.color = "red";
+    greske++;
   }
   else{
-    document.querySelector("#poljePoruka > p").innerHTML = " ";
+    document.querySelector("#poljePoruka > p").innerHTML = `<i class="far fa-check-circle"></i>`;
+    document.querySelector("#poljePoruka > p").style.color = "green";
   }
+
+  if(greske==0){
+    alert("Poruka je uspešno poslata");
+
+  }
+
+  $(document).ready(function(){
+  
+    $('#posalji').click(function(){
+      
+        if(greske==0) {
+          $('#posalji').val("POSLATO");
+        } else {
+          $('#posalji').val("POŠALJI");
+        }
+      });
+  });
 }
 
 
@@ -403,7 +501,7 @@ $(document).ready(function(){
 
 
 
-//footer
+//FOOTER
 
 let deoFuter = document.querySelector("#dodat");
 

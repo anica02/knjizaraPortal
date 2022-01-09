@@ -50,7 +50,7 @@ nav ul li a{
     font-weight: bold;
 }
 
-nav ul li a:hover{
+.dodatHover{
     background-color: #EB5E28;
     padding:5px;
     color:#fff;
@@ -98,15 +98,6 @@ margin-left:10px;
     border-style: inset;
     padding:5px;
     margin-top: 5px;
-    display: none;
-}
-#stanje2{
-    width:50%;
-    background-color:#fff;
-    border:2px solid #818078;
-    border-radius: 5px;
-    border-style: inset;
-    padding:5px;
     display: none;
 }
 .font{
@@ -167,8 +158,6 @@ hr{
     width:70%;
     height:37vh;
 } 
-
-
 #dodaj{
     display: none;
 }
@@ -230,9 +219,21 @@ hr{
     width:20%;
     text-align: center;
     padding: 10px 0px; 
+    
 }
 .artikl img{
     width:70%;
+    
+}
+.pojava{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+.pojava.active{
+    transform: translateY(0px);
+    opacity: 1;
 }
 span p{
     font-weight: bold;
