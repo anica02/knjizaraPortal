@@ -12,22 +12,19 @@ ispisMeni += `<li><i class="fas fa-bars" id="ikonicaHamburger"></i></li>`;
 ispisMeni += "</ul>";
 divMeni.innerHTML = ispisMeni;
 
-$(document).ready(function(){
-  
-  $('#meni ul li i').click(function(){
+
+  $(document).ready(function(){
+    $('#meni ul li i').click(function(){
       $('#meni ul li a').slideToggle('fast');
       $('#meni ul li').addClass('aLinkoviMenia');
-    })
-});
-
-$(document).ready(function(){
-  $('#meni ul li a').hover(function(){
-    $(this).addClass('dodatHover');
-  }, function(){
-    $(this).removeClass('dodatHover');
+      $('#meni ul li a').on("click", function(){
+        $('#meni ul li a').hide();
+      });
+    });
   });
-})
 
+ 
+ 
 //PRETRAGA
 
 function dohvatiSadrzaj(){
@@ -45,7 +42,8 @@ function dohvatiSadrzaj(){
       for(let j=0;i<nizA.length;i++){
          if(sadrzaj==nizK[i])
             var link=`<a href="${nizA[i]}">${nizK[i]}</a>`;
-            document.querySelector("#linkKnjige").innerHTML = link;
+            document.querySelector("#linkKnjige").classList.remove("sakriP");
+            document.querySelector("#linkKnjige").innerHTML= link;
            
         }
       }
@@ -60,7 +58,7 @@ function dohvatiSadrzaj(){
 
 function nestani(){
   document.querySelector("#pretragaKnjiga > p").classList.add("sakriP");
- document.querySelector("#linkKnjige > a").classList.add("sakriP");
+  document.querySelector("#linkKnjige").classList.add("sakriP");
 }
 
 
@@ -145,8 +143,7 @@ $('.slajder').slick({
   ]
 });
 
-//knjige
-
+//KNJIGE
 
 let nizKnjiga = ["img/lord.png", "img/it.png", "img/player.png", "img/MysteryKnight.png"];
 let nizKnjiga2 = ["img/zamalek.png","img/andric.png","img/konstantinovo.png","img/austrijanka.png"];
@@ -260,8 +257,6 @@ function pojavi(){
  }
 }
 
-
-
 //OBRADA FORME
 
 function provera(){
@@ -314,7 +309,7 @@ function provera(){
   }
    //proveri telefon
 
-   let reTelefon=/^06[0-689]\s[\d]{2}\s[\d]{2}\s[\d]{2,3}$/;
+   let reTelefon=/^06[0-689]{8,9}$/;
    if(reTelefon.test(vrednostTelefon)){
     document.querySelector("#telefon > p").innerHTML = `<i class="far fa-check-circle"></i>`;
     document.querySelector("#telefon > p").style.color = "green";
@@ -397,14 +392,10 @@ function provera(){
       });
   });
 
-
-  
-  
 }
 
-
 function provera2(){
-  var imePrezime2, email, poruka, greske;
+  var imePrezime2, email, poruka;
   var vrednostImePrezime2, vrednotEmail, vrednostPoruka;
 
   imePrezime2 = document.querySelector("#imePrezime2");
@@ -413,7 +404,7 @@ function provera2(){
   vrednotEmail = email.value;
   poruka = document.querySelector("#vasaPoruka");
   vrednostPoruka = poruka.value;
-  greske=0;
+  let greske=0;
 
   //proveri ime i prezime
 
@@ -473,7 +464,6 @@ function provera2(){
 }
 
 
-
 //DODAVANJE U KORPU
 
 let korpaDugme = document.getElementsByClassName("dugme");
@@ -497,8 +487,6 @@ $(document).ready(function(){
     porudzbinaKorpa.innerHTML = "Broj poručenih knjiga: "+ brojKnjiga;
  });
 });
-
-
 
 
 //FOOTER

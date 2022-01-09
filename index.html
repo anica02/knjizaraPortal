@@ -29,7 +29,7 @@
             <div id="pretragaKnjiga">
                 <input type="search" placeholder="Unesite željenu knjigu..." onFocus="nestani()" id="trazenaKnjiga" /> 
                 <i class="fas fa-search" id="pretraga" onClick="dohvatiSadrzaj()"></i><br/>
-                <p clas="sakriP"></p><p id="linkKnjige"></p>
+                <p clas="sakriP"></p><p id="linkKnjige" class="sakriP"></p>
             </div>
             <div id="dodatneStavke">
                 <i class="fas fa-cart-arrow-down font hid" id="korpa1"></i>
@@ -49,7 +49,7 @@
                 <h3>#Udubite se u svet mašte</h3>
             </div>
         </div>
-
+        
         <div id="strani" class="sirina gornja">
             <h1 class="linija"><a name="strani">Strani Pisci</a></h1>
             <div id="prvi" class="region d-flex" >
@@ -94,14 +94,14 @@
                         </div>
                         <div id="telefon">
                             <label for="brojTelefona">Broj telefona: *</label>
-                            <input type="text" name="brojTelefona" id="brojTelefona"  placeholder="06x xx xx xxx"/>
+                            <input type="text" name="brojTelefona" id="brojTelefona"  placeholder="06xxxxxxxx"/>
                             <p></p>
                         </div>
                         <div id="plati">
                             <label for="placanje">
                                 <select id="placanje">
                                     <option value="0">Način plaćanja *</option>
-                                    <option value="gotovina">Pri uzeću</option>
+                                    <option value="gotovina">Pouzećem</option>
                                     <option value="kartica">Karticom</option>
                                 </select>
                               
