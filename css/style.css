@@ -283,7 +283,8 @@ p span{
 #blokSaSlikom img{
     width:50%;
     border-radius: 5px;
-    box-shadow: -40px -20px #252422;
+    box-shadow: -40px -20px rgba(37, 36, 34, 0.9);
+    
 }
 #oAutoru{
     border-bottom:15px solid #EB5E28;
