@@ -8,14 +8,12 @@
         <meta name="keywords" content="portal, knjižara, knjige, strani, domaći, pisci, autor, kontakt"/>
         <meta name="description" content="Knjižara Portal, stranica gde možete kupiti vaše omiljene knjige domaćih a i stranih pisaca "/>
         <link type="text/css" rel="stylesheet" href="css/style.css"/>
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript" src="js/main.js" defer></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" 
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-
         <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
         <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-      
     </head>
     <body>
         <a name="naslovna"></a>
@@ -38,9 +36,16 @@
         </header>
         <nav class="navigacija sirina" id="meni">
         </nav>
+        <nav id="miniMeni" class="sirina">
+            <div id="minNestani">
+
+            </div>
+            <div id="ikonicaHamburger">
+                <i class="fas fa-bars" id="ikonicaHamburger"></i>
+            </div>
+        </nav>
         <hr class="hr-tekst" data-content="Ekranizovane &nbsp;Knjige">
         <div class="slajder">
-           
         </div>
         <div id="baner">
             <div id="tekstUnutraSlike">
@@ -49,7 +54,6 @@
                 <h3>#Udubite se u svet mašte</h3>
             </div>
         </div>
-        
         <div id="strani" class="sirina gornja">
             <h1 class="linija"><a name="strani">Strani Pisci</a></h1>
             <div id="prvi" class="region d-flex" >
@@ -82,21 +86,8 @@
                             <p></p>
                         </div>
                         <div id="plati">
-                            <label for="placanje">
-                                <select id="placanje">
-                                    <option value="0">Način plaćanja *</option>
-                                    <option value="gotovina">Pouzećem</option>
-                                    <option value="kartica">Karticom</option>
-                                </select>
-                              
-                            </label>
-                            <p></p>
                         </div>
                         <div id="upit">
-                            <label>Koji žanr rado čitate</label><br/>
-                            <input type="checkbox" name="ch" id="chDrm" value="Drama"> Drama<br/>
-                            <input type="checkbox" name="ch" id="chKrim" value="Krimi"> Kriminalistički<br/>
-                            <input type="checkbox" name="ch" id="chKom" value="Komedija"> Komedija
                         </div>
                         <div id="isporuci">
                             <label for="isporuka">Isporuka: *</label><br/>
@@ -113,7 +104,7 @@
                 </div>
                 <div id="poruka">
                     <h3>Pošaljite nam poruku</h3>
-                    <form method="GET" action="#" name="formula1">
+                    <form method="GET" action="#" name="formula1" id="drugaForma">
                         <div id="poljeImePrezime2">
                             <label for="imePrezime2">Ime i prezime:</label>
                             <input type="text" name="imePrezime2" id="imePrezime2" placeholder="Petar Petrović"/>
@@ -126,10 +117,10 @@
                         </div>
                         <div id="poljePoruka">
                             <label for="vasaPoruka">Vaša poruka:</label>
-                            <textarea id="vasaPoruka"></textarea>
+                            <textarea id="vasaPoruka"  placeholder="Ovde uneti poruku"></textarea>
                             <p></p>
                         </div>
-                        <input type="button" id="posalji" value="POŠALJI" onClick="provera2()"/>
+                        <input type="button" id="posalji" value="POŠALJI"  onClick="provera2()"/>
                     </form>
                 </div>
             </div>
@@ -141,16 +132,9 @@
                     <img src="img/IMG_20211204_190734.jpg"/>
                 </div>
                 <div class="blok1">
-                    <h3>Moje ime je Anica Radenković</h3>
-                     <p><span>Datum rođenja: </span>14.02.2002</p>
-                    <p><span>Satatus:</span> Student</p>
-                    <p><span>Mesto studiranja:</span> Visoka ICT škola</p>
-                    <p><span>Modul: </span>Web programiranje</p>
-                    <p><span>Zvanje nakon završetka:</span> Strukovni inženjer elektrotehnike i računarstva</p>
                 </div>
             </div>
         </div>
-        
         <footer id="futer" class="sirina">
             <div class="region2  d-flex">
                 <div class="deo">
@@ -172,7 +156,6 @@
             </div>
             <div class="gornja"><p>Copyright &copy; Portal Knjižara</p></div>
         </footer>
-
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="slick/slick.min.js"></script>

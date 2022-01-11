@@ -4,24 +4,29 @@
 let meniHref = ["#naslovna", "#strani", "#domaci", "#autor", "#kontakt"];
 let meniTekst = ["Naslovna", "Strani", "Domaći", "Autor", "Kontakt"];
 let divMeni = document.querySelector("#meni");
+let divMeniMini = document.querySelector("#minNestani")
 let ispisMeni = "<ul>";
 for(let i=0; i<meniHref.length; i++){
   ispisMeni += `<li><a href="${meniHref[i]}">${meniTekst[i]}</a></li>`;
 }      
-ispisMeni += `<li><i class="fas fa-bars" id="ikonicaHamburger"></i></li>`;
 ispisMeni += "</ul>";
 divMeni.innerHTML = ispisMeni;
+divMeniMini.innerHTML =ispisMeni;
 
 
-  $(document).ready(function(){
-    $('#meni ul li i').click(function(){
-      $('#meni ul li a').slideToggle('fast');
-      $('#meni ul li').addClass('aLinkoviMenia');
-      $('#meni ul li a').on("click", function(){
-        $('#meni ul li a').hide();
-      });
-    });
+$(document).ready(function(){
+  
+  $('#ikonicaHamburger').click(function(){
+    $("#minNestani").slideToggle("fast");
   });
+});
+let aTagovi = document.querySelectorAll("#minNestani ul li a");
+
+for(let i = 0; i <aTagovi.length; i++){
+  $(aTagovi[i]).click(function(){
+    $("#minNestani").slideToggle("fast");
+  });
+}
 
 //PRETRAGA
 
@@ -237,6 +242,7 @@ for(let p=0; p<nizAutori2.length; p++){
   regionKnjiga2.appendChild(artikl2);
 }
 
+
 window.addEventListener("scroll", pojavi);
 function pojavi(){
  let pojava = document.querySelectorAll(".pojava");
@@ -254,9 +260,50 @@ function pojavi(){
    }
  }
 }
+                
+// ELEMENT FORME
+
+//padajuca
+
+let selectTag = document.createElement("select");
+selectTag.setAttribute("id", "placanje");
+
+let label1 = document.createElement("label");
+label1.setAttribute("for", "placanje");
+
+let pTag =document.createElement("p");
+
+let nizValue = ["0", "gotovina", "kartica"];
+let nizText = ["Način plaćanja *","Pouzećem", "Karticom"];
+
+for(let i=0;i<nizValue.length;i++){
+    selectTag.innerHTML += `<option value="${nizValue[i]}">${nizText[i]}</option>`;
+}
+let divPlati = document.getElementById("plati");
+divPlati.appendChild(label1);
+divPlati.appendChild(selectTag);
+divPlati.appendChild(pTag);
+
+//checkbox
+
+let divUpit = document.getElementById("upit");
+let label2 = document.createElement("label");
+label2.setAttribute("for", "ch");
+label2.innerHTML = "Koji žanr rado čitate ?<br/>";
+
+let nizValueCh = ["Drama", "Krimi", "Komedija"];
+let nizIdCh = ["chDrm", "chKrim", "chKom"];
+let nizTekstCh = ["Drama","Kriminalistički","Komedija"];
+divUpit.appendChild(label2);
+
+for(let j=0;j<nizValueCh.length;j++){
+  let inputCh;
+  inputCh =`<input type="checkbox" name="ch" id="${nizIdCh[j]}" value="${nizValueCh[j]}"> ${nizTekstCh[j]}<br/>`;
+  divUpit.innerHTML+= inputCh;
+}
+
 
 //OBRADA FORME
-
 function provera(){
 
   var imePrezime,adresa, brojTelefona, placanje, nizZanr, isporuka, nizPodaci;
@@ -338,11 +385,10 @@ function provera(){
   var vrednostZanr=" ";
    for(let z=0; z<nizZanr.length; z++){
      if(nizZanr[z].checked){
-
-       vrednostZanr += nizZanr[z].value + " ";
-       nizPodaci.push(vrednostZanr);
+       vrednostZanr += nizZanr[z].value +" ";
      }
    }
+   nizPodaci.push(vrednostZanr);
    
 
   //provera radio 
@@ -372,25 +418,17 @@ function provera(){
         ispis+=`${podatak}\n`;
       }
   }
-
+  $(document).ready(function(){
   if(brojGreske==0){
     alert("Porudžbina je uspešna\n\n"+`${ispis}`);
-
-  }
-
-  $(document).ready(function(){
-  
-    $('#poruci').click(function(){
-      
-        if(brojGreske==0) {
-          $('#poruci').val("PORUČENO");
-        } else {
-          $('#poruci').val("PORUČI");
-        }
-      });
+    $('#poruci').val("PORUČENO");
+        
+  } else {
+            $('#poruci').val("PORUČI");
+          }
   });
-
 }
+
 
 function provera2(){
   var imePrezime2, email, poruka;
@@ -442,22 +480,14 @@ function provera2(){
     document.querySelector("#poljePoruka > p").innerHTML = `<i class="far fa-check-circle"></i>`;
     document.querySelector("#poljePoruka > p").style.color = "green";
   }
-
-  if(greske==0){
-    alert("Poruka je uspešno poslata");
-
-  }
-
-  $(document).ready(function(){
   
-    $('#posalji').click(function(){
-      
-        if(greske==0) {
+  $(document).ready(function(){
+   if(greske==0) {
+          alert("Poruka je uspešno poslata");
           $('#posalji').val("POSLATO");
-        } else {
+   } else {
           $('#posalji').val("POŠALJI");
-        }
-      });
+   }
   });
 }
 
@@ -469,6 +499,7 @@ console.log(korpaDugme);
 
 $(document).ready(function(){
   var brojKnjiga=0;
+  var cena=0;
   $('.dugme').click(function() {
     if ($(this).text() == "DODAJ U KORPU") {
        $(this).text("DODATO");
@@ -480,14 +511,28 @@ $(document).ready(function(){
       $(this).text("DODAJ U KORPU")
     }
     let dodajUKorpu = document.querySelector("#stanje >p");
-    dodajUKorpu.innerHTML = "Broj knjiga:"+brojKnjiga;
+    dodajUKorpu.innerHTML = "Broj knjiga:"+brojKnjiga+"Cena:"+cena;
     let porudzbinaKorpa = document.querySelector(".forma > p");
     porudzbinaKorpa.innerHTML = "Broj poručenih knjiga: "+ brojKnjiga;
  });
 });
 
+//AUTOR 
+
+let blokSaTekstom = document.querySelector(".blok1");
+
+let nizTekstSpan = ["Datum rođenja: ","Satatus: ", "Mesto studiranja: ", "Modul: ","Zvanje nakon završetka: ", "Cilj: "];
+let nizTekstP = ["14.02.2002", "Student", "Visoka ICT škola ","Web programiranje", "Strukovni inženjer elektrotehnike i računarstva", "Da nakon završenog usavršavanja budem u mogućnosti da radim za neke velike poznate kompanije"];
+
+blokSaTekstom.innerHTML="<h3>Moje ime je Anica Radenković</h3>";
+for(let i=0;i<nizTekstP.length;i++){
+  let pTagovi;
+  pTagovi =`<p><span>${nizTekstSpan[i]}</span>${nizTekstP[i]}</p>`;
+  blokSaTekstom.innerHTML += pTagovi;
+}
 
 //FOOTER
+
 
 let deoFuter = document.querySelector("#dodat");
 
