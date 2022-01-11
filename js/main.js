@@ -495,11 +495,9 @@ function provera2(){
 //DODAVANJE U KORPU
 
 let korpaDugme = document.getElementsByClassName("dugme");
-console.log(korpaDugme);
 
 $(document).ready(function(){
   var brojKnjiga=0;
-  var cena=0;
   $('.dugme').click(function() {
     if ($(this).text() == "DODAJ U KORPU") {
        $(this).text("DODATO");
@@ -511,9 +509,10 @@ $(document).ready(function(){
       $(this).text("DODAJ U KORPU")
     }
     let dodajUKorpu = document.querySelector("#stanje >p");
-    dodajUKorpu.innerHTML = "Broj knjiga:"+brojKnjiga+"Cena:"+cena;
+    dodajUKorpu.innerHTML = "Broj knjiga:"+brojKnjiga;
     let porudzbinaKorpa = document.querySelector(".forma > p");
     porudzbinaKorpa.innerHTML = "Broj poručenih knjiga: "+ brojKnjiga;
+    
  });
 });
 
