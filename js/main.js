@@ -370,7 +370,7 @@ function provera(){
 
    }
    else{
-     document.querySelector("#telefon > p").innerHTML = `<i class="fas fa-exclamation-circle"> Telefon nije unet u ispravnom formatu`;
+     document.querySelector("#telefon > p").innerHTML = `<i class="fas fa-exclamation-circle"></i> Telefon nije unet u ispravnom formatu`;
      document.querySelector("#telefon > p").style.color = "red";
      brojGreske++;
 
@@ -379,7 +379,7 @@ function provera(){
    //provera padajuce
 
   if(placanje.options[placanje.options.selectedIndex].value=="0"){
-    document.querySelector("#plati > p").innerHTML = `<i class="fas fa-exclamation-circle"> Morate izabrati način plaćanja`;
+    document.querySelector("#plati > p").innerHTML = `<i class="fas fa-exclamation-circle"></i> Morate izabrati način plaćanja`;
     document.querySelector("#plati > p").style.color = "red";
     brojGreske++;
   }
@@ -409,7 +409,7 @@ function provera(){
     }
   }
   if(vrednostIsporuka==" "){
-    document.querySelector("#isporuci > p").innerHTML = `<i class="fas fa-exclamation-circle"> Morate izabrati način isporuke`;
+    document.querySelector("#isporuci > p").innerHTML = `<i class="fas fa-exclamation-circle"></i> Morate izabrati način isporuke`;
     document.querySelector("#isporuci > p").style.color = "red";
     brojGreske++;
   }
