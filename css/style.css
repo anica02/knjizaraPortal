@@ -5,6 +5,12 @@
     box-sizing:border-box;
     font-family: 'PT Serif', serif;
 }
+.borduraGornja{
+    border-top: #EB5E28 2px solid;
+}
+.borduraDonja{
+    border-bottom: #EB5E28 2px solid;
+}
 #novosti{
     text-align: center;
     background-color:#EB5E28;
@@ -22,8 +28,6 @@ header{
     top:0%;
     z-index:1;
     text-align: center;
-    border-bottom: #EB5E28 2px solid;
-    border-top: #EB5E28 2px solid;
     background-color: #fff;
     padding:10px 0px;
     overflow: hidden;
@@ -57,8 +61,6 @@ a{
     width:100%;
     display: block;
     text-align: center;
-    border-bottom: #EB5E28 2px solid;
-    border-top: #EB5E28 2px solid;
     background-color: #fff;
     padding:10px 0px;
     display: none;
@@ -101,8 +103,6 @@ a{
 .fa-search{
 margin-left:10px;
 }
-
-
 #dodatneStavke{
     width:12%;
     position: relative;
@@ -122,9 +122,6 @@ margin-left:10px;
     font-size:27px;
     margin-right:5px;
     color:#252422;
-}
-i.vid{
-    display: none;
 }
 hr{
     width:90%;
@@ -179,7 +176,6 @@ hr{
 #dodaj{
     display: none;
 }
-
 #baner{
      width:90%;
      height:600px;
@@ -237,11 +233,16 @@ hr{
     width:20%;
     text-align: center;
     padding: 10px 0px; 
-    
 }
 .artikl img{
     width:70%;
-    
+}
+.binIcon{
+    font-size: 18px;
+    padding-top: 45px;
+}
+.nestani{
+    display: none;
 }
 .pojava{
     position: relative;
@@ -258,9 +259,6 @@ span p{
     margin:5px 0px;
     border-bottom: 2px solid #EB5E28;
 }
-p span{
-    border-bottom: 2px solid #EB5E28;
-}
 .dugme{
     padding:8px;
     background-color: #EB5E28;
@@ -271,7 +269,43 @@ p span{
     font-weight: bold;
     margin-top: 10px;
 }
-
+.dugmeIzbaci{
+    padding:8px 3px;
+    background-color: #EB5E28;
+    border:#EB5E28 solid 2px;
+    border-radius: 5px;
+    border-style: inset;
+    color:#fff;
+    font-weight: bold;
+    margin-left: 10px;
+    display: none;
+}
+.kolicina{
+    width:50%;
+    margin-left: 20%;
+}
+.slikaVelicina img{
+   width:50px;
+}
+.blokVelicina{
+  width:100%;
+  
+  margin-top:10px;
+}
+.blokVelicina img{
+    width: 70px;
+    height: 100px;
+}
+.padddingText{
+   padding: 35px 0px;
+   height:100px;
+}
+.blok {
+    width:50%;
+}
+.bin{
+    width:8%;
+}
 .blok1{
    width:47%;
    position: relative;
@@ -297,13 +331,11 @@ p span{
    text-align: center;
    position: relative;
    margin-top: 20px;
-  
 }
 #blokSaSlikom img{
     width:50%;
     border-radius: 5px;
-    box-shadow: -40px -20px rgba(37, 36, 34, 0.9);
-    
+    box-shadow: -40px -20px rgba(37, 36, 34, 0.9); 
 }
 #oAutoru{
     border-bottom:15px solid #EB5E28;
@@ -347,7 +379,6 @@ p span{
     margin-top: 10px;
     padding:10px 10px;
     width:50%;
-    border-radius: 5px;
     background-color: #EB5E28;
     border:#EB5E28 solid 2px;
     border-radius: 5px;
@@ -367,42 +398,39 @@ form{
 #porudzbina p{
     margin-bottom: 5px;
 }
-#poruka{
+#stanjeKorpa{
     border-top:10px solid ;
     border-bottom:10px solid ;
     border-radius: 5px;
     border-style: outset;
     padding:2% 5%;
-    text-align: center;
-    width:35%;
+    text-align:center;
+    width:45%;
 }
-#poruka input[type=text]{
-    margin-bottom: 10px;
-    padding:10px 10px;
-    width:100%;
-    border-radius: 5px;
+#stanjeKorpa h4{
+    border-bottom: 2px solid #252422;
 }
-#poruka input[type=button]{
-    margin-top: 10px;
+
+.blok{
+    padding: 5px 10px;
+    text-align: left;
+}
+#ukloniIzKorpe{
+    margin-top: 20px;
     padding:10px 10px;
     width:50%;
-    border-radius: 5px;
     background-color: #EB5E28;
     border:#EB5E28 solid 2px;
     border-radius: 5px;
     border-style: inset;
     color:#fff;
+}
 
+#ukupnaCena{
+    text-align: right;
+    margin-top: 40px;
 }
-#vasaPoruka{
-    width:100%;
-    height:100px;
-}
-#ispis{
-    text-align: left;
-    margin-top: 10px;
-    color:green;
-}
+
 footer{
     text-align: center;
     background-color:#EB5E28;
@@ -410,7 +438,6 @@ footer{
     color:#fff;
     border-radius: 2px;
 }
-
 .deo{
     text-align: center;
 }
@@ -433,25 +460,19 @@ footer{
 .font p{
     font-size:10px;
 }
-.odalji{
-    margin-top:15px;
-    padding:6px;
-}
+
 @keyframes proba {
     10% {
-      width: 50px;
+        width: 50px;
     }
     60% {
-      width: 160px;
+        width: 160px;
     }
     100% {
-      width: 50px;
+        width: 50px;
     }
 }
 
-@media screen and (max-width:1442px){
-    
-}
 @media screen and (max-width:1026px){
     #baner{
         background-size: contain;
@@ -481,9 +502,6 @@ footer{
     }
 }
 @media screen and (max-width:769px){
-    nav{
-        width:90%;
-    }
     #slika{
         width:20%;
     }
@@ -499,9 +517,6 @@ footer{
     }
     nav ul li a{
         font-size:15px;
-    }
-    .vid i{
-        font-size:22px;
     }
     #novosti{
         font-size:13px;
@@ -551,7 +566,13 @@ footer{
     .blok1 h3{
         font-size: 19px;
     }
-   
+    #stanjeKorpa{
+       padding:2% 1%;
+    }
+    .blokVelicina img {
+        width: 60px;
+        height: 95px;
+    }
 }
 @media screen and (max-width: 500px) { 
     
@@ -583,10 +604,10 @@ footer{
         width:100%;
         margin:10px 0px;
     }
-    
 }
 
 @media screen and (max-width:426px){
+  
     #meni{
        display: none;
     }
@@ -628,7 +649,6 @@ footer{
     #pretragaKnjiga input[type="search"]{
         font-size:12px;
     }
-    
     .artikl{
         width:70%;
     }
@@ -650,7 +670,6 @@ footer{
         box-shadow: -30px -20px #EB5E28;
         margin-left:15%;
     }
-   
     #meniDonji{
         text-align: center;
     }
@@ -666,14 +685,26 @@ footer{
     .knjiga img {
         width: 90%;
     }
-   
+    #stanjeKorpa{
+        width:90%;
+    }
+    .padddingText{
+        padding-top: 10px;
+        height: 50px;
+    }
+    .blok{
+        text-align: center;
+    }
+    
     
 }
 @media screen and (max-width:376px){
+    
     .knjiga img {
         width: 80%;
     }
 }
+
 @media screen and (max-width:325px){
 
     #pretragaKnjiga input[type="search"]{
@@ -686,39 +717,33 @@ footer{
     header{
         padding:10px 5px;
     }
-   #slika{
-       width:50%;
-   }
-   #tekstUnutraSlike{
-       font-size:6px;
-       top:30%;
-   }
-   .margina{
-       margin-bottom: 5px;
-   }
-   nav ul li a{
-       font-size:15px;
-   }
-   .vid i{
-       font-size:22px;
-   }
-   #novosti{
-       font-size:13px;
-   }
-   .hr-tekst:after{
-       font-size:15px;
-   }
-   #pretragaKnjiga input[type="search"]{
-       font-size:12px;
-   }
-   .artikl h3{
-    font-size: 18px;
+    #slika{
+        width:50%;
     }
-  .artikl h4{
-    font-size: 16px; 
-   }
-   
-  
-   
+    #tekstUnutraSlike{
+        font-size:6px;
+        top:30%;
+    }
+    .margina{
+        margin-bottom: 5px;
+    }
+    nav ul li a{
+        font-size:15px;
+    }
+    #novosti{
+        font-size:13px;
+    }
+    .hr-tekst:after{
+        font-size:15px;
+    }
+    #pretragaKnjiga input[type="search"]{
+        font-size:12px;
+    }
+    .artikl h3{
+        font-size: 18px;
+    }
+    .artikl h4{
+        font-size: 16px; 
+    } 
 }
 

@@ -8,14 +8,14 @@ let divMeniMini = document.querySelector("#minNestani")
 let ispisMeni = "<ul>";
 for(let i=0; i<meniHref.length; i++){
   ispisMeni += `<li><a href="${meniHref[i]}">${meniTekst[i]}</a></li>`;
-}      
+}
 ispisMeni += "</ul>";
 divMeni.innerHTML = ispisMeni;
 divMeniMini.innerHTML =ispisMeni;
 
 
 $(document).ready(function(){
-  
+
   $('#ikonicaHamburger').click(function(){
     $("#minNestani").slideToggle("fast");
   });
@@ -47,7 +47,7 @@ function dohvatiSadrzaj(){
             var link=`<a href="${nizA[i]}">${nizK[i]}</a>`;
             document.querySelector("#linkKnjige").classList.remove("sakriP");
             document.querySelector("#linkKnjige").innerHTML= link;
-           
+
         }
       }
     }
@@ -56,7 +56,7 @@ function dohvatiSadrzaj(){
       document.querySelector("#pretragaKnjiga > p").classList.remove("sakriP");
       document.querySelector("#pretragaKnjiga > p").style.color = "red";
   }
-  
+
 }
 
 function nestani(){
@@ -68,9 +68,9 @@ function nestani(){
 //KORPA
 
 $(document).ready(function(){
-  
+
   $('#korpa1').click(function(){
-    
+
       if($('#stanje').is(':visible')) {
         $('#stanje').hide();
       } else {
@@ -82,16 +82,15 @@ $(document).ready(function(){
 //SLAJDER
 
 let divKnjige = document.querySelector(".slajder");
-let nizAlt = ["korica-od-knjige-sa-glavom-zmaja","korica-od-knjige-sa-krunom","korica-od-knjige-sa-viteškim-šlemom","korica-od-knjige-sa-štitom","korica-od-knjige-sa-metaforom",
-              "korica-od-knjige-sa-peharom","korica-od-knjige-sa-feniksom","korica-od-knjige-sa-metaforom2", "korica-od-knjige-sa-crvenom-jabukom","korica-od-knjige-sa-cvetom",
-              "korica-od-knjige-sa-pokidanom-mašnom","korica-od-knjige-sa-šahovskim-figurama"];
-let nizSrc=["img/got.png", "img/got2.png","img/got3.png", "img/got4.png", "img/harry1.png", "img/harry2.png", "img/harry3.png", "img/harry4.png", "img/tw1.png",
-            "img/tw2.png", "img/tw3.png", "img/tw4.png"];
+let nizAlt = ["game-of-thrones-1","game-of-thrones-2","game-of-thrones-3","game-of-thrones-4","harry-potter-1",
+              "harry-potter-2","harry-potter-3","harry-potter-4", "twilight-1","twilight-2","twilight-3","twilight-4"];
+let nizSrc=["img/got.png", "img/got2.png","img/got3.png", "img/got4.png", "img/harry1.png", "img/harry2.png", 
+            "img/harry3.png", "img/harry4.png", "img/tw1.png","img/tw2.png", "img/tw3.png", "img/tw4.png"];
 for(let l=0; l<nizAlt.length; l++){
- 
+
   let divSaKnjigom = document.createElement("div");
   divSaKnjigom.setAttribute("class", "knjiga");
- 
+
 
   let slika = document.createElement("img");
   slika.setAttribute("src", `${nizSrc[l]}`);
@@ -150,16 +149,16 @@ $('.slajder').slick({
 
 let nizKnjiga = ["img/lord.png", "img/it.png", "img/player.png", "img/MysteryKnight.png"];
 let nizKnjiga2 = ["img/zamalek.png","img/andric.png","img/konstantinovo.png","img/austrijanka.png"];
-let nizKnjigaAlt = ["korica-od-knjige-sa-prstenima","korica-od-knjige-sa-dečakom-u-žutoj-kabanici","korica-od-knjige-sa-naslovom","korica-od-knjige-sa-viteškim-štitom"];
-let nizKnjigaAlt2 = ["korica-od knjige-sa-balegarom","korica-od knjige-sa-zlatnim-slovima","korica-od knjige-sa-mačem","korica-od knjige-sa-devojkom"];
+let nizKnjigaAlt = ["the-fellowsip-of-the-ring","it","ready-player-two","the-mistery-knight"];
+let nizKnjigaAlt2 = ["zamalek","znakovi-pored-puta","konstantinovo-raskršće","austrijanka"];
 let nizNaslova = ["The fellowsip of the ring", "IT", "Ready player two", "The mistery knight"];
-let nizNaslova2 = ["Zamalek","Znakovi pored","Konstantinovo raskršće","Austrijanka"];
+let nizNaslova2 = ["Zamalek","Znakovi pored puta","Konstantinovo raskršće","Austrijanka"];
 let linkoviKaKnjigama = ["the fellowsip of the ring","it","ready player two","the mistery knight"];
 let linkoviKaKnjigama2 = ["zamalek", "znakovi", "konstantinovo", "austrijanka"];
 let nizAutori = ["J.R.R. TOLKIEN", "STEPHEN KING", "ERNEST CLINE", "GEORGE R.R MARTIN"];
 let nizAutori2 = ["DEJAN STANKOVIĆ","IVO ANDRIĆ","DEJAN STOJILJKOVIĆ","ZORAN MILEKIĆ"];
-let nizCena = ["1.282 din", "1.300 din","1.100 din","2.500 din"];
-let nizCena2 = ["900 din","1.300 din","800 din","900 din"];
+let nizCena = ["1282 din", "1300 din","1100 din","2500 din"];
+let nizCena2 = ["900 din","1300 din","800 din","900 din"];
 
 
 let regionKnjiga = document.querySelector("#prvi");
@@ -188,18 +187,24 @@ for(let k=0; k<nizAutori.length; k++){
   noveCene.innerHTML = nizCena[k];
 
   let spanCene = document.createElement("span");
-  spanCene.appendChild(noveCene); 
+  spanCene.appendChild(noveCene);
+  spanCene.setAttribute("css", "borduraDonja")
 
   let poruciDugme = document.createElement("button");
   poruciDugme.setAttribute("class", "dugme");
   poruciDugme.innerHTML = "DODAJ U KORPU";
 
-  
+  let izbaciDugme = document.createElement("button");
+  izbaciDugme.setAttribute("class", "dugmeIzbaci");
+  izbaciDugme.innerHTML = "UKLONI";
+
   artikl.appendChild(linkoviKnjiga);
   artikl.appendChild(noviNaslov);
   artikl.appendChild(noviAutor);
   artikl.appendChild(spanCene);
   artikl.appendChild(poruciDugme);
+  artikl.appendChild(izbaciDugme);
+
 
   regionKnjiga.appendChild(artikl);
 }
@@ -227,11 +232,14 @@ for(let p=0; p<nizAutori2.length; p++){
   noveCene2.innerHTML = nizCena2[p];
 
   let spanCene2 = document.createElement("span");
-  spanCene2.appendChild(noveCene2); 
+  spanCene2.appendChild(noveCene2);
+  spanCene2.setAttribute("css", "borduraDonja")
 
   let poruciDugme = document.createElement("button");
   poruciDugme.setAttribute("class", "dugme");
   poruciDugme.innerHTML = "DODAJ U KORPU";
+
+
 
   artikl2.appendChild(linkoviKnjiga2);
   artikl2.appendChild(noviNaslov2);
@@ -248,7 +256,7 @@ function pojavi(){
  let pojava = document.querySelectorAll(".pojava");
 
  for(let p=0; p<pojava.length; p++){
-   let visinaProzora = window.innerHeight; 
+   let visinaProzora = window.innerHeight;
    let pojavaGornja = pojava[p].getBoundingClientRect().top;
    let pojavaTacka = 150;
 
@@ -260,7 +268,7 @@ function pojavi(){
    }
  }
 }
-                
+
 // ELEMENT FORME
 
 //padajuca
@@ -334,9 +342,9 @@ function provera(){
     document.querySelector("#poljeImePrezime > p").innerHTML = `<i class="fas fa-exclamation-circle"></i> Ime i prezime nije ispravno uneto`;
     document.querySelector("#poljeImePrezime > p").style.color = "red";
     brojGreske++;
-    
+
   }
-  
+
   //proveri adresu
 
   let reAdresa=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[\d]{1,5}$/;
@@ -359,13 +367,13 @@ function provera(){
     document.querySelector("#telefon > p").innerHTML = `<i class="far fa-check-circle"></i>`;
     document.querySelector("#telefon > p").style.color = "green";
     nizPodaci.push(vrednostTelefon);
-   
+
    }
    else{
      document.querySelector("#telefon > p").innerHTML = `<i class="fas fa-exclamation-circle"> Telefon nije unet u ispravnom formatu`;
      document.querySelector("#telefon > p").style.color = "red";
      brojGreske++;
-     
+
    }
 
    //provera padajuce
@@ -389,9 +397,9 @@ function provera(){
      }
    }
    nizPodaci.push(vrednostZanr);
-   
 
-  //provera radio 
+
+  //provera radio
 
   var vrednostIsporuka=" ";
   for(let i=0;i<isporuka.length;i++){
@@ -413,7 +421,7 @@ function provera(){
 
 
   if(nizPodaci.length>0){
-    var ispis="Vasi podaci\n";
+    var ispis="Vaši podaci\n";
     for(let podatak of nizPodaci){
         ispis+=`${podatak}\n`;
       }
@@ -422,7 +430,7 @@ function provera(){
   if(brojGreske==0){
     alert("Porudžbina je uspešna\n\n"+`${ispis}`);
     $('#poruci').val("PORUČENO");
-        
+
   } else {
             $('#poruci').val("PORUČI");
           }
@@ -430,103 +438,131 @@ function provera(){
 }
 
 
-function provera2(){
-  var imePrezime2, email, poruka;
-  var vrednostImePrezime2, vrednotEmail, vrednostPoruka;
-
-  imePrezime2 = document.querySelector("#imePrezime2");
-  vrednostImePrezime2 = imePrezime2.value;
-  email = document.querySelector("#mejl");
-  vrednotEmail = email.value;
-  poruka = document.querySelector("#vasaPoruka");
-  vrednostPoruka = poruka.value;
-  let greske=0;
-
-  //proveri ime i prezime
-
-  let reImePrezime2=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}$/;
-  if(reImePrezime2.test(vrednostImePrezime2)){
-    document.querySelector("#poljeImePrezime2 > p").innerHTML =`<i class="far fa-check-circle"></i>`;
-    document.querySelector("#poljeImePrezime2 > p").style.color = "green";
-  }
-  else{
-    document.querySelector("#poljeImePrezime2 > p").innerHTML = `<i class="fas fa-exclamation-circle">Ime i prezime nije ispravno uneto`;
-    document.querySelector("#poljeImePrezime2 > p").style.color = "red";
-    greske++;
-    
-  }
-  //provera email-a
-
-  let reEmail=/^\w([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-  if(reEmail.test(vrednotEmail)){
-    document.querySelector("#poljeEmail > p").innerHTML =`<i class="far fa-check-circle"></i>`;
-    document.querySelector("#poljeEmail > p").style.color = "green";
-  }
-  else{
-    document.querySelector("#poljeEmail > p").innerHTML = `<i class="fas fa-exclamation-circle">Email nije unet u ispravnom formatu`;
-    document.querySelector("#poljeEmail > p").style.color = "red";
-    greske++;
-    
-  }
-
-  //proveri poruku
-
-  if(vrednostPoruka.length<=0){
-    document.querySelector("#poljePoruka > p").innerHTML = `<i class="fas fa-exclamation-circle">Niste uneli poruku`;
-    document.querySelector("#poljePoruka > p").style.color = "red";
-    greske++;
-  }
-  else{
-    document.querySelector("#poljePoruka > p").innerHTML = `<i class="far fa-check-circle"></i>`;
-    document.querySelector("#poljePoruka > p").style.color = "green";
-  }
-  
-  $(document).ready(function(){
-   if(greske==0) {
-          alert("Poruka je uspešno poslata");
-          $('#posalji').val("POSLATO");
-   } else {
-          $('#posalji').val("POŠALJI");
-   }
-  });
-}
-
 
 //DODAVANJE U KORPU
 
+
+
+
+let blokSlika= document.querySelector(".slika");
+let blokNaziv= document.querySelector(".naziv");
+let blokCena= document.querySelector(".cena");
+let blokBin= document.querySelector(".bin");
+
 let korpaDugme = document.getElementsByClassName("dugme");
 
-$(document).ready(function(){
-  var brojKnjiga=0;
-  $('.dugme').click(function() {
-    if ($(this).text() == "DODAJ U KORPU") {
-       $(this).text("DODATO");
-       brojKnjiga++;
-    }
-    else if($(this).text() == "DODATO"){
-      alert("Knjiga je uklonjena iz korpe");
-      brojKnjiga--;
-      $(this).text("DODAJ U KORPU")
-    }
-    let dodajUKorpu = document.querySelector("#stanje >p");
-    dodajUKorpu.innerHTML = "Broj knjiga:"+brojKnjiga;
-    let porudzbinaKorpa = document.querySelector(".forma > p");
-    porudzbinaKorpa.innerHTML = "Broj poručenih knjiga: "+ brojKnjiga;
-    
- });
-});
 
-//AUTOR 
+
+for(let i=0;i<korpaDugme.length;i++){
+  let dugmeSelektovano = korpaDugme[i];
+  dugmeSelektovano.addEventListener("click", dodatoUKorpu);
+  var brojKnjiga=0;
+  var ukupnaCena=0;
+}
+
+function dodatoUKorpu(event){
+
+  let dugmeArtikl=event.target;
+  let ukloniKnjige = document.querySelector("#stanje >p >span");
+   if(ukloniKnjige.innerHTML=="0"){
+    brojKnjiga=0;
+  }
+  if(dugmeArtikl){
+    brojKnjiga++;
+  }
+  
+  dugmeArtikl.innerHTML="DODATO";
+  
+
+  var artikl = dugmeArtikl.parentElement;
+  var cena= artikl.querySelectorAll(".artikl > span > p")[0].innerText;
+  var naslov = artikl.querySelectorAll(".artikl > h3")[0].innerText;
+  var slika = artikl.querySelectorAll(".artikl > a ")[0].innerHTML;
+
+
+
+  let blokZaPodatkeSlika = document.createElement("div");
+  blokZaPodatkeSlika.setAttribute("class", "blokVelicina")
+  let blokZaPodatkeCena = document.createElement("div");
+  blokZaPodatkeCena.setAttribute("class", "blokVelicina padddingText")
+  let blokZaPodatkeNaziv= document.createElement("div");
+  blokZaPodatkeNaziv.setAttribute("class", "blokVelicina padddingText")
+
+
+  let ukupnaCenaKnjiga = document.querySelector("#ukupnaCena > p");
+  let dodajUKorpu = document.querySelector("#stanje >p >span");
+  dodajUKorpu.innerHTML= brojKnjiga;
+
+ 
+
+  blokZaPodatkeSlika.innerHTML=slika;
+  blokZaPodatkeNaziv.innerHTML=naslov;
+  blokZaPodatkeCena.innerHTML=cena;
+
+  var cenaInt= parseInt(cena);
+  if(ukupnaCenaKnjiga.innerHTML==0){
+
+    ukupnaCena=cenaInt;
+  }
+  else{
+    ukupnaCena+=cenaInt;
+  }
+  ukupnaCenaKnjiga.innerHTML=ukupnaCena;
+
+
+  blokSlika.appendChild(blokZaPodatkeSlika);
+  blokNaziv.appendChild(blokZaPodatkeNaziv);
+  blokCena.appendChild(blokZaPodatkeCena);
+
+
+}
+
+
+let dugmeIzbaciKnjige= document.querySelector("#ukloniIzKorpe");
+dugmeIzbaciKnjige.addEventListener("click", izbaciSve);
+
+function izbaciSve(){
+  let dohvatiKnjige= document.querySelectorAll(".blokVelicina");
+  for(let i=0;i<dohvatiKnjige.length;i++){
+    dohvatiKnjige[i].remove();
+  }
+  let cena= document.querySelector("#ukupnaCena > p");
+  let ukloniKnjige = document.querySelector("#stanje >p >span");
+  ukloniKnjige.innerHTML="0";
+  cena.innerText=0;
+  
+  for(let i=0;i<korpaDugme.length;i++){
+    korpaDugme[i].innerHTML="DODAJ U KORPU";
+  }
+  
+}
+
+// function dodataKnjiga(){
+//   brojKnjiga++;
+// }
+// $(document).ready(function(){
+//   $('.dugme').click(function() {
+//     if ($(this).text() == "DODAJ U KORPU") {
+//        $(this).text("DODATO");
+//        dodataKnjiga();
+//     }
+//   });
+
+// });
+
+
+
+//AUTOR
 
 let blokSaTekstom = document.querySelector(".blok1");
 
 let nizTekstSpan = ["Datum rođenja: ","Satatus: ", "Mesto studiranja: ", "Modul: ","Zvanje nakon završetka: ", "Cilj: "];
-let nizTekstP = ["14.02.2002", "Student", "Visoka ICT škola ","Web programiranje", "Strukovni inženjer elektrotehnike i računarstva", "Da nakon završenog usavršavanja budem u mogućnosti da radim za neke velike poznate kompanije"];
+let nizTekstP = ["14.02.2002", "Student", "Visoka ICT škola ","Web programiranje", "Strukovni inženjer elektrotehnike i računarstva", "Da nakon završenog usavršavanja.."];
 
 blokSaTekstom.innerHTML="<h3>Moje ime je Anica Radenković</h3>";
 for(let i=0;i<nizTekstP.length;i++){
   let pTagovi;
-  pTagovi =`<p><span>${nizTekstSpan[i]}</span>${nizTekstP[i]}</p>`;
+  pTagovi =`<p><span class="borduraDonja">${nizTekstSpan[i]}</span>${nizTekstP[i]}</p>`;
   blokSaTekstom.innerHTML += pTagovi;
 }
 
@@ -542,7 +578,7 @@ let nizoviKlasa = ["fab fa-instagram", "fab fa-twitter-square","fab fa-linkedin"
 let divSaLinkovima=document.createElement("div");
 
   for(let a=0;a<nizLinkovaKaDM.length;a++){
-    
+
     let aLink = document.createElement("a");
     let iIkonica = document.createElement("i");
 
@@ -557,7 +593,7 @@ let divSaLinkovima=document.createElement("div");
   deoFuter.appendChild(divSaLinkovima);
 
 
-                    
+
 
 
 

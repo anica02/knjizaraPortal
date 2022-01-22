@@ -22,7 +22,7 @@
         </div>
         <header class="d-flex sirina">
             <div id="slika">
-                <a href="index.html"><img src="img/Logo1.png" alt="dečak-čita-knjigu"/></a>
+                <a href="index.html"><img src="img/Logo1.png" alt="logo"/></a>
             </div>
             <div id="pretragaKnjiga">
                 <input type="search" placeholder="Unesite željenu knjigu..." onFocus="nestani()" id="trazenaKnjiga" /> 
@@ -31,14 +31,13 @@
             </div>
             <div id="dodatneStavke">
                 <i class="fas fa-cart-arrow-down font hid" id="korpa1"></i>
-                <div id="stanje"><p>Broj knjiga:0</p></div>
+                <div id="stanje"><p>Broj knjiga:<span></span></p></div>
             </div>
         </header>
-        <nav class="navigacija sirina" id="meni">
+        <nav class="navigacija sirina borduraDonja borduraGornja" id="meni">
         </nav>
-        <nav id="miniMeni" class="sirina">
+        <nav id="miniMeni" class="sirina borduraDonja borduraGornja">
             <div id="minNestani">
-
             </div>
             <div id="ikonicaHamburger">
                 <i class="fas fa-bars" id="ikonicaHamburger"></i>
@@ -102,8 +101,30 @@
                         </div>
                     </form>
                 </div>
-                <div id="poruka">
-                    <h3>Pošaljite nam poruku</h3>
+                <div id="stanjeKorpa">
+                    <h3> Stanje porudzbine</h3><br/>
+                    <div id="korpaPorudzbina" class="d-flex">
+                            <div class=" blok slika">
+                                <h4>Knjiga</h4>
+                                
+                            </div>
+                            <div class=" blok naziv">
+                                <h4>Naziv</h4>
+
+                            </div>
+                            <div class=" blok cena">
+                                <h4>Cena</h4>
+
+                            </div>
+                    </div>
+                    <div id="ukupnaCena">
+                        <h4>Ukupna cena</h4>
+                        <p></p>
+                    </div>
+                    <button id="ukloniIzKorpe">UKLONI</button>
+               
+                   
+                   <!-- <h3>Pošaljite nam poruku</h3>
                     <form method="GET" action="#" name="formula1" id="drugaForma">
                         <div id="poljeImePrezime2">
                             <label for="imePrezime2">Ime i prezime:</label>
@@ -121,7 +142,7 @@
                             <p></p>
                         </div>
                         <input type="button" id="posalji" value="POŠALJI"  onClick="provera2()"/>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div>
