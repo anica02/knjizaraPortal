@@ -331,7 +331,7 @@ function provera(){
 
   //proveri ime i prezime
 
-  let reImePrezime=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}$/;
+  let reImePrezime=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}(\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15})+$/;
 
   if(reImePrezime.test(vrednostImePrezime)){
     document.querySelector("#poljeImePrezime > p").innerHTML = `<i class="far fa-check-circle"></i>`;
@@ -347,7 +347,7 @@ function provera(){
 
   //proveri adresu
 
-  let reAdresa=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}\s[\d]{1,5}$/;
+  let reAdresa=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}(\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{0,15})*\s[\d]{1,5}$/;
 
   if(reAdresa.test(vrednostAdresa)){
     document.querySelector("#poljeAdresa > p").innerHTML = `<i class="far fa-check-circle"></i>`;
@@ -362,7 +362,7 @@ function provera(){
   }
    //proveri telefon
 
-   let reTelefon=/^06[0-689]{8,9}$/;
+   let reTelefon=/^06[0-689][0-9]{6,9}$/;
    if(reTelefon.test(vrednostTelefon)){
     document.querySelector("#telefon > p").innerHTML = `<i class="far fa-check-circle"></i>`;
     document.querySelector("#telefon > p").style.color = "green";
@@ -537,18 +537,6 @@ function izbaciSve(){
   
 }
 
-// function dodataKnjiga(){
-//   brojKnjiga++;
-// }
-// $(document).ready(function(){
-//   $('.dugme').click(function() {
-//     if ($(this).text() == "DODAJ U KORPU") {
-//        $(this).text("DODATO");
-//        dodataKnjiga();
-//     }
-//   });
-
-// });
 
 
 
@@ -556,8 +544,8 @@ function izbaciSve(){
 
 let blokSaTekstom = document.querySelector(".blok1");
 
-let nizTekstSpan = ["Datum rođenja: ","Satatus: ", "Mesto studiranja: ", "Modul: ","Zvanje nakon završetka: ", "Cilj: "];
-let nizTekstP = ["14.02.2002", "Student", "Visoka ICT škola ","Web programiranje", "Strukovni inženjer elektrotehnike i računarstva", "Da nakon završenog usavršavanja.."];
+let nizTekstSpan = ["Datum rođenja: ","Status: ", "Mesto studiranja: ", "Modul: ","Zvanje nakon završetka: ", "Cilj: "];
+let nizTekstP = ["14.02.2002", "Student", "Visoka ICT škola ","Web programiranje", "Strukovni inženjer elektrotehnike i računarstva", "Stićanje adekvatnog znanja, stručnosti i veština za rad na kreativnim mestima u oblasti programiranja"];
 
 blokSaTekstom.innerHTML="<h3>Moje ime je Anica Radenković</h3>";
 for(let i=0;i<nizTekstP.length;i++){
