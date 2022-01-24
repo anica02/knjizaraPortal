@@ -32,8 +32,10 @@ for(let i = 0; i <aTagovi.length; i++){
 
 function dohvatiSadrzaj(){
 
-  var nizK=["the fellowsip of the ring","it","ready player two","the mistery knight", "zamalek", "znakovi pored puta","konstantinovo raskrsce", "austrijanka"];
-  var nizA=["#the fellowsip of the ring","#it","#ready player two","#the mistery knight","#zamalek", "#znakovi", "#konstantinovo", "#austrijanka"];
+  var nizK=["the fellowsip of the ring","it","ready player two","the mistery knight", "zamalek", "znakovi pored puta","konstantinovo raskrsce", "austrijanka", "a game of thrones","a clash of kings", "a storm of swords 1", "a storm of swords 2", "chamber of secrets", "goblet of fire", "order of the phoenix", "half-blood prince", "twilight", "new moon", "eclipse", "breaking dawn"];
+  var nizA=["#the fellowsip of the ring","#it","#ready player two","#the mistery knight","#zamalek", "#znakovi", "#konstantinovo", "#austrijanka", "#game-of-thrones-1", "#game-of-thrones-2", "#game-of-thrones-3", "#game-of-thrones-4", "#harry-potter-1", "#harry-potter-2", "#harry-potter-3", "#harry-potter-4", "#twilight-1", "#twilight-2", "#twilight-3", "#twilight-4"];
+
+ 
   var sadrzaj = document.querySelector("#trazenaKnjiga").value.toLowerCase();
   var sadrzi = nizK.includes(sadrzaj,0);
 
@@ -90,13 +92,16 @@ for(let l=0; l<nizAlt.length; l++){
 
   let divSaKnjigom = document.createElement("div");
   divSaKnjigom.setAttribute("class", "knjiga");
-
+ 
+  let link=document.createElement("a");
+  link.setAttribute("name", `${nizAlt[l]}`);
 
   let slika = document.createElement("img");
   slika.setAttribute("src", `${nizSrc[l]}`);
   slika.setAttribute("alt", `${nizAlt[l]}`);
 
-  divSaKnjigom.appendChild(slika);
+  link.appendChild(slika);
+  divSaKnjigom.appendChild(link);
 
   divKnjige.appendChild(divSaKnjigom);
 }
