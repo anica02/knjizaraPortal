@@ -314,7 +314,7 @@ for(let j=0;j<nizValueCh.length;j++){
 //OBRADA FORME
 function provera(){
 
-  var imePrezime,adresa, brojTelefona, placanje, nizZanr, isporuka, nizPodaci;
+  var imePrezime,adresa, brojTelefona, placanje, nizZanr, isporuka, nizPodaci, dodateKnjige, greska;
   var vrednostImePrezime, vrednostAdresa;
   nizPodaci = [];
   imePrezime = document.querySelector("#imePrezime");
@@ -326,6 +326,9 @@ function provera(){
   placanje = document.querySelector("#placanje");
   nizZanr = document.getElementsByName("ch");
   isporuka = document.getElementsByName("isporuka");
+  dodateKnjige = document.querySelector("#ukupnaCena > p");
+  greska= document.querySelector(".forma > p");
+  
 
   let brojGreske=0;
 
@@ -419,6 +422,16 @@ function provera(){
     nizPodaci.push(vrednostIsporuka);
   }
 
+  //provera da li su dodate knige
+  if(dodateKnjige.textContent==" " || dodateKnjige.textContent==0){
+    brojGreske++;
+    greska.innerHTML= `<i class="fas fa-exclamation-circle"></i> Morate dodati knjigu`;
+    greska.style.color = "red";
+  }
+  else{
+    greska.innerHTML= `<i class="far fa-check-circle"></i> Broj dodatih knjiga:`+brojKnjiga;
+    greska.style.color = "green";
+  }
 
   if(nizPodaci.length>0){
     var ispis="Vaši podaci\n";
@@ -545,7 +558,7 @@ function izbaciSve(){
 let blokSaTekstom = document.querySelector(".blok1");
 
 let nizTekstSpan = ["Datum rođenja: ","Status: ", "Mesto studiranja: ", "Modul: ","Zvanje nakon završetka: ", "Cilj: "];
-let nizTekstP = ["14.02.2002", "Student", "Visoka ICT škola ","Web programiranje", "Strukovni inženjer elektrotehnike i računarstva", "Stićanje adekvatnog znanja, stručnosti i veština za rad na kreativnim mestima u oblasti programiranja"];
+let nizTekstP = ["14.02.2002", "Student", "Visoka ICT škola ","Web programiranje", "Strukovni inženjer elektrotehnike i računarstva", "Sticanje adekvatnog znanja, stručnosti i veština za rad na kreativnim mestima u oblasti programiranja"];
 
 blokSaTekstom.innerHTML="<h3>Moje ime je Anica Radenković</h3>";
 for(let i=0;i<nizTekstP.length;i++){
