@@ -33,7 +33,7 @@ for(let i = 0; i <aTagovi.length; i++){
 function dohvatiSadrzaj(){
 
   var nizK=["the fellowsip of the ring","it","ready player two","the mistery knight", "zamalek", "znakovi pored puta","konstantinovo raskrsce", "austrijanka", "a game of thrones","a clash of kings", "a storm of swords 1", "a storm of swords 2", "chamber of secrets", "goblet of fire", "order of the phoenix", "half-blood prince", "twilight", "new moon", "eclipse", "breaking dawn"];
-  var nizA=["#the fellowsip of the ring","#it","#ready player two","#the mistery knight","#zamalek", "#znakovi", "#konstantinovo", "#austrijanka", "#game-of-thrones-1", "#game-of-thrones-2", "#game-of-thrones-3", "#game-of-thrones-4", "#harry-potter-1", "#harry-potter-2", "#harry-potter-3", "#harry-potter-4", "#twilight-1", "#twilight-2", "#twilight-3", "#twilight-4"];
+  var nizA=["#the fellowsip of the ring","#it","#ready player two","#the mistery knight","#zamalek", "#znakovi", "#konstantinovo", "#austrijanka", "#game-of-thrones-1", "#game-of-thrones-2", "#game-of-thrones-3", "#game-of-thrones-4", "#harry-potter-1", "#harry-potter-2", "#harry-potter-3","#harry-potter-4","#twilight-1", "#twilight-2", "#twilight-3", "#twilight-4"];
 
  
   var sadrzaj = document.querySelector("#trazenaKnjiga").value.toLowerCase();
@@ -355,7 +355,7 @@ function provera(){
 
   //proveri adresu
 
-  let reAdresa=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}(\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{0,15})*\s[\d]{1,5}$/;
+  let reAdresa=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}(\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{0,15})*\s[\d]{1,5}(\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15})*,(\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,10})+,\s[\d]{5}$/;
 
   if(reAdresa.test(vrednostAdresa)){
     document.querySelector("#poljeAdresa > p").innerHTML = `<i class="far fa-check-circle"></i>`;
