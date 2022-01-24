@@ -355,7 +355,7 @@ function provera(){
 
   //proveri adresu
 
-  let reAdresa=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}(\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{0,15})*\s[\d]{1,5}(\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15})*,(\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,10})+,\s[\d]{5}$/;
+  let reAdresa=/^[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15}(\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{0,15})*\s[\d]{1,5}(\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,15})*,(\s[A-ZČĆŠĐŽ]{1}[a-zčćšđž]{2,10})+\s[\d]{5}$/;
 
   if(reAdresa.test(vrednostAdresa)){
     document.querySelector("#poljeAdresa > p").innerHTML = `<i class="far fa-check-circle"></i>`;
