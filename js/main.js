@@ -176,85 +176,50 @@ let nizCena2 = ["900 din","1300 din","800 din","900 din"];
 let regionKnjiga = document.querySelector("#prvi");
 let regionKnjiga2 = document.querySelector("#drugi");
 
-for(let i=0; i<nizAutori.length; i++){
+ispisKnjiga(nizKnjiga,nizKnjigaAlt,nizNaslova, linkoviKaKnjigama,nizAutori,nizCena,regionKnjiga);
+ispisKnjiga(nizKnjiga2,nizKnjigaAlt2,nizNaslova2, linkoviKaKnjigama2,nizAutori2,nizCena2,regionKnjiga2);
 
-  let artikl = document.createElement("div");
-  artikl.setAttribute("class", "artikl pojava");
+function ispisKnjiga(nizK,nizA,nizN,nizL,nizAu,nizC, region){
+  for(let i=0; i<nizAutori.length; i++){
 
-  let novaKnjiga = document.createElement("img");
-  novaKnjiga.setAttribute("alt", `${nizKnjigaAlt[i]}`);
-  novaKnjiga.setAttribute("src", `${nizKnjiga[i]}`);
-
-  let linkoviKnjiga = document.createElement('a');
-  linkoviKnjiga.appendChild(novaKnjiga);
-  linkoviKnjiga.setAttribute("name", `${linkoviKaKnjigama[i]}`);
-
-  let noviNaslov = document.createElement("h3");
-  noviNaslov.innerHTML = nizNaslova[i];
-
-  let noviAutor = document.createElement("h4");
-  noviAutor.innerHTML = nizAutori[i];
-
-  let noveCene = document.createElement("p");
-  noveCene.innerHTML = nizCena[i];
-
-  let spanCene = document.createElement("span");
-  spanCene.appendChild(noveCene);
-  spanCene.setAttribute("css", "borduraDonja")
-
-  let poruciDugme = document.createElement("button");
-  poruciDugme.setAttribute("class", "dugme");
-  poruciDugme.innerHTML = "DODAJ U KORPU";
-
-
-  artikl.appendChild(linkoviKnjiga);
-  artikl.appendChild(noviNaslov);
-  artikl.appendChild(noviAutor);
-  artikl.appendChild(spanCene);
-  artikl.appendChild(poruciDugme);
-
-  regionKnjiga.appendChild(artikl);
+    let artikl = document.createElement("div");
+    artikl.setAttribute("class", "artikl pojava");
+  
+    let novaKnjiga = document.createElement("img");
+    novaKnjiga.setAttribute("alt", `${nizA[i]}`);
+    novaKnjiga.setAttribute("src", `${nizK[i]}`);
+  
+    let linkoviKnjiga = document.createElement('a');
+    linkoviKnjiga.appendChild(novaKnjiga);
+    linkoviKnjiga.setAttribute("name", `${nizL[i]}`);
+  
+    let noviNaslov = document.createElement("h3");
+    noviNaslov.innerHTML = nizN[i];
+  
+    let noviAutor = document.createElement("h4");
+    noviAutor.innerHTML = nizAu[i];
+  
+    let noveCene = document.createElement("p");
+    noveCene.innerHTML = nizC[i];
+  
+    let spanCene = document.createElement("span");
+    spanCene.appendChild(noveCene);
+    spanCene.setAttribute("css", "borduraDonja")
+  
+    let poruciDugme = document.createElement("button");
+    poruciDugme.setAttribute("class", "dugme");
+    poruciDugme.innerHTML = "DODAJ U KORPU";
+  
+  
+    artikl.appendChild(linkoviKnjiga);
+    artikl.appendChild(noviNaslov);
+    artikl.appendChild(noviAutor);
+    artikl.appendChild(spanCene);
+    artikl.appendChild(poruciDugme);
+  
+    region.appendChild(artikl);
+  }
 }
-
-for(let i=0; i<nizAutori2.length; i++){
-
-  let artikl2 = document.createElement("div");
-  artikl2.setAttribute("class", "artikl pojava");
-
-  let novaKnjiga2 = document.createElement("img");
-  novaKnjiga2.setAttribute("alt", `${nizKnjigaAlt2[i]}`);
-  novaKnjiga2.setAttribute("src", `${nizKnjiga2[i]}`);
-
-  let linkoviKnjiga2 = document.createElement('a');
-  linkoviKnjiga2.appendChild(novaKnjiga2);
-  linkoviKnjiga2.setAttribute("name", `${linkoviKaKnjigama2[i]}`);
-
-  let noviNaslov2 = document.createElement("h3");
-  noviNaslov2.innerHTML = nizNaslova2[i];
-
-  let noviAutor2  =document.createElement("h4");
-  noviAutor2.innerHTML = nizAutori2[i];
-
-  let noveCene2 = document.createElement("p");
-  noveCene2.innerHTML = nizCena2[i];
-
-  let spanCene2 = document.createElement("span");
-  spanCene2.appendChild(noveCene2);
-  spanCene2.setAttribute("css", "borduraDonja")
-
-  let poruciDugme = document.createElement("button");
-  poruciDugme.setAttribute("class", "dugme");
-  poruciDugme.innerHTML = "DODAJ U KORPU";
-
-  artikl2.appendChild(linkoviKnjiga2);
-  artikl2.appendChild(noviNaslov2);
-  artikl2.appendChild(noviAutor2);
-  artikl2.appendChild(spanCene2);
-  artikl2.appendChild(poruciDugme);
-
-  regionKnjiga2.appendChild(artikl2);
-}
-
 
 window.addEventListener("scroll", pojavi);
 function pojavi(){
