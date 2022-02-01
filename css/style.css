@@ -171,7 +171,7 @@ hr{
 }
 .knjiga img{
     width:70%;
-    height:37vh;
+    height:250px;
 } 
 #baner{
      width:90%;
@@ -444,7 +444,60 @@ footer{
         width: 50px;
     }
 }
+@media screen and (max-width:2561px){
+    .knjiga a img {
+        width: 76%;
+        height:500px;
+    }
+    #baner{
+        background-size:cover;
+        height:850px;
+        font-size: 30px;
+    }
+    .artikl{
+        width:24%;
+        font-size: 30px;
+    }
+    .dugme{
+        font-size: 28px;
+    }
+}
+@media screen and (max-width:1441px){
+    .artikl{
+        width:23%;
+        font-size: 22px;
+    }
+    .dugme{
+        font-size: 16px;
+    }
+    .knjiga a img {
+        width: 76%;
+        height:300px;
+    }
+    .artikl{
+        width:23%;
+        font-size: 16px;
+    }
+    .blokVelicina img{
+        width: 75px;
+        height: 95px;
+    }
+    .blokVelicina{
+        font-size: 17px;
+    }
+    #ukloniIzKorpe{
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    #porudzbina input[type=button]{
+        font-size:15px;
+    }#baner{
+        background-size:cover;
+        height:500px;
+        font-size: 16px;
+    }
 
+}
 @media screen and (max-width:1026px){
     #baner{
         background-size: contain;
@@ -463,15 +516,30 @@ footer{
     }
     .artikl{
         width:23%;
+        font-size: 16px;
     }
     .blok1 {
         width: 45%;
         margin-right: 5%;
         box-shadow: -30px -20px #EB5E28;
     }
-    .knjiga img {
-        width: 90%;
-        height: 35vh;
+    .knjiga a img {
+        width: 85%;
+        height:250px;
+       
+    }
+    .dugme{
+        font-size: 14px;
+    }
+    .blokVelicina{
+        font-size: 16px;
+    }
+    #ukloniIzKorpe{
+        font-size: 13px;
+        margin-bottom: 14px;
+    }
+    #porudzbina input[type=button]{
+        font-size:13px;
     }
 }
 @media screen and (max-width:769px){
@@ -515,18 +583,14 @@ footer{
     #poruka{
         padding:8% 5%;
     }
-    .knjiga img {
-        width: 85%;
-        height: 33vh;
+    .knjiga a img {
+        width: 80%;
+        height: 220px;
     }
-    .artikl h3{
-        font-size:13px;
-    }
-    .artikl h4{
-        font-size:13px;
-    }
+    
     .artikl{
         width:22%;
+        font-size: 11px;
     }
     .blok1 {
         width: 80%;
@@ -546,6 +610,19 @@ footer{
     .blokVelicina img {
         width: 60px;
         height: 95px;
+    }
+    .dugme{
+        font-size: 10px;
+    }
+    .blokVelicina{
+        font-size: 15px;
+    }
+    #ukloniIzKorpe{
+        font-size: 12px;
+        margin-bottom: 14px;
+    }
+    #porudzbina input[type=button]{
+        font-size:12px;
     }
 }
 @media screen and (max-width: 500px) { 
@@ -578,6 +655,7 @@ footer{
         width:100%;
         margin:10px 0px;
     }
+    
 }
 
 @media screen and (max-width:426px){
@@ -624,13 +702,12 @@ footer{
         font-size:12px;
     }
     .artikl{
-        width:70%;
+        width:60%;
+        font-size: 17px;
     }
-    .artikl h3{
-        font-size: 19px;
-    }
-    .artikl h4{
-     font-size: 17px;
+    
+    .dugme{
+        font-size: 15px;
     }
     #porudzbina, #poruka{
         width:90%;
@@ -656,8 +733,9 @@ footer{
     .blok1 h3{
         font-size: 18px;
     }
-    .knjiga img {
+    .knjiga a img {
         width: 90%;
+        height: 210px;
     }
     #stanjeKorpa{
         width:90%;
@@ -669,16 +747,49 @@ footer{
     .blok{
         text-align: center;
     }
+    .blokVelicina img {
+        width: 80px;
+        height: 110px;
+    }
+    .blokVelicina{
+        font-size: 17px;
+    }
+    #ukloniIzKorpe{
+        font-size: 11px;
+        margin-bottom: 13px;
+    }
+    #porudzbina input[type=button]{
+        font-size:11px;
+    }
    
 }
 @media screen and (max-width:376px){
     
-    .knjiga img {
-        width: 75%;
+    .knjiga a img {
+        width: 70%;
+        height: 200px;
     }
     .blokVelicina img {
-        width: 60px;
-        height: 95px;
+        width: 70px;
+        height: 100px;
+    }
+    .blokVelicina{
+        font-size: 16px;
+    }
+    .artikl{
+        width:65%;
+        font-size: 15px;
+    }
+    
+    .dugme{
+        font-size: 13px;
+    }
+    #ukloniIzKorpe{
+        font-size: 11px;
+        margin-bottom: 15px;
+    }
+    #porudzbina input[type=button]{
+        font-size:11px;
     }
 }
 
