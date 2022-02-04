@@ -116,8 +116,17 @@ for(let i=0; i<nizAlt.length; i++){
 $('.slajder').slick({
   centerMode: true,
   centerPadding: '60px',
-  slidesToShow: 4,
+  slidesToShow: 5,
   responsive: [
+    {
+      breakpoint: 1026,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 4
+      }
+    },
     {
       breakpoint: 769,
       settings: {
